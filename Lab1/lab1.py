@@ -7,6 +7,7 @@ print(sys.executable)
 from collections import deque
 from queue import PriorityQueue
 import argparse
+import time
 
 from utils import *
 
@@ -325,6 +326,11 @@ if __name__ == "__main__":
 
     # Output the solution
     if solution:
-        print("Solution found:", solution)
+        actions = solution.solution()
+        path_length = len(actions)
+        print("Total nodes generated:", )
+        print("Total time taken:", )
+        print("Path length:", path_length)
+        print("Path:", solution)
     else:
         print("No solution found.")

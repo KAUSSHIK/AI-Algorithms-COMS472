@@ -89,6 +89,19 @@ class EightPuzzle:
                 if state[i] > state[j] and state[i] != 0 and state[j] != 0:
                     num_inversions += 1
         return num_inversions % 2 == 0
+    
+    def h1(self, node):
+        """ Return the heuristic value for a given state. Default heuristic function used is 
+        h(n) = number of misplaced tiles """
+        return sum(s != g for (s, g) in zip(node.state, self.goal))
+    
+    def h2(self, node):
+        """ Return the heuristic value for a given state. Manhattan distance heuristic function is used """   
+        return sum(manhattan_distance(s, g) for (s, g) in zip(node.state, self.goal))
+    
+    def h3(self, node):
+        """ Return the heuristic value for a given state. Gaschnig's heuristic"""
+        return sum(gaschnig_distance(s, g) for (s, g) in zip(node.state, self.goal))
 
     #Unused - might remove
     def value(self, state):

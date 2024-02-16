@@ -13,3 +13,6 @@ def euclidean_distance(x, y):
 
 def manhattan_distance(x, y):
     return sum(abs(_x - _y) for _x, _y in zip(x, y))
+
+def gaschnig_distance(x, y):
+    return max(abs(_x - _y) for _x, _y in zip(x, y))

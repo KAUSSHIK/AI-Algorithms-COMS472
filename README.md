@@ -9,7 +9,7 @@ The goal is to solve the 8-puzzle problem using the following algorithms:
 - IDS (Iterative deepening DFS) (you may want to check for cycles during DFS)
 - A* with misplaced title heuristic (h1).
 - A* search using the Manhattan distance heuristic (h2).
-- A* with one more heuristic (Euclidean/some other heuristic) (h3).
+- A* with one more heuristic (Gaschnig's heurisitc) (h3).
 
 ## Part 1
 ### Input

@@ -3,8 +3,10 @@ COMS 472 : AI - Lab 1
 Author: Kausshik Manojkumar
 """
 import sys
+print(sys.executable)
 from collections import deque
 from queue import PriorityQueue
+import argparse
 
 from utils import *
 
@@ -294,12 +296,14 @@ def astar(problem, heuristic):
 # ______________________________________________________________________________
 # Main Method
 if __name__ == "__main__":
-    if len(sys.argv) != 3:
-        print("Usage: python script.py <file_path> <algorithm>")
-        sys.exit(1)
+
+    parser = argparse.ArgumentParser(description="Solve an 8-puzzle problem with a specified algorithm.")
+    parser.add_argument('--fPath', type=str, required=True, help='File path of the puzzle state')
+    parser.add_argument('--alg', type=str, required=True, choices=['BFS', 'IDS', 'h1', 'h2', 'h3'], help='Algorithm to use for solving the puzzle')
+
+    args = parser.parse_args()
     
-    file_path, algorithm = sys.argv[1], sys.argv[2]
-    initial_state = read_puzzle_state(file_path)
+    initial_state = read_puzzle_state(args.fPath)
     problem = EightPuzzle(initial=initial_state)
 
     if not problem.check_solvability(initial_state):
@@ -308,15 +312,15 @@ if __name__ == "__main__":
 
     # Solve the puzzle based on the selected algorithm
     solution = None
-    if algorithm == "BFS":
+    if args.alg == "BFS":
         solution = bfs(problem)
-    elif algorithm == "IDS":
+    elif args.alg == "IDS":
         solution = ids(problem)
-    elif algorithm == "h1":
+    elif args.alg == "h1":
         solution = astar(problem, heuristic="h1")
-    elif algorithm == "h2":
+    elif args.alg == "h2":
         solution = astar(problem, heuristic="h2")
-    elif algorithm == "h3":
+    elif args.alg == "h3":
         solution = astar(problem, heuristic="h3")
 
     # Output the solution

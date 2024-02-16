@@ -16,3 +16,13 @@ def manhattan_distance(x, y):
 
 def gaschnig_distance(x, y):
     return max(abs(_x - _y) for _x, _y in zip(x, y))
+
+def read_puzzle_state(filename):
+    with open(filename, 'r') as f:
+        state = []
+        for line in f:
+            row = line.strip().split()
+            state.extend(row)
+    #Replace the blank tile with 0
+    state = [0 if x == '_' else int(x) for x in state]
+    return tuple(state)

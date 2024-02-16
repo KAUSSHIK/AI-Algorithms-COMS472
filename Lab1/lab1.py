@@ -4,6 +4,7 @@ Author: Kausshik Manojkumar
 """
 import sys
 from collections import deque
+from queue import PriorityQueue
 
 from utils import *
 
@@ -212,3 +213,114 @@ class SimpleProblemSolvingAgentProgram:
 
     def search(self, problem):
         raise NotImplementedError
+
+# ______________________________________________________________________________
+# SEARCH ALGORITHMS
+def bfs(problem):
+    """Breadth First Search"""
+    node = Node(problem.initial)
+    if problem.goal_test(node.state):
+        return node
+    frontier = deque([node])
+    explored = set()
+    while frontier:
+        node = frontier.popleft()
+        explored.add(node.state)
+        for child in node.expand(problem):
+            if child.state not in explored and child not in frontier:
+                if problem.goal_test(child.state):
+                    return child
+                frontier.append(child)
+    return None
+
+def ids(problem, limit=50):
+    """Iterative Deepening Search"""
+    for depth in range(limit):
+        result = dls(problem, depth)
+        if result:
+            return result
+    return None
+
+def dls(problem, limit):
+    """Depth Limited Search"""
+    node = Node(problem.initial)
+    return recursive_dls(node, problem, limit)
+
+def recursive_dls(node, problem, limit):
+    """Recursive Depth Limited Search"""
+    if problem.goal_test(node.state):
+        return node
+    elif limit == 0:
+        return 'cutoff'
+    else:
+        cutoff_occurred = False
+        for child in node.expand(problem):
+            result = recursive_dls(child, problem, limit - 1)
+            if result == 'cutoff':
+                cutoff_occurred = True
+            elif result is not None:
+                return result
+        return 'cutoff' if cutoff_occurred else None
+    
+def astar(problem, heuristic):
+    """A* Search"""
+    if heuristic == "h1":
+        heuristic = problem.h1
+    elif heuristic == "h2":
+        heuristic = problem.h2
+    else:
+        heuristic = problem.h3
+
+    node = Node(problem.initial)
+    frontier = PriorityQueue('min', f=lambda node: node.path_cost + heuristic(node))
+    frontier.append(node)
+    explored = set()
+    while frontier:
+        node = frontier.pop()
+        if problem.goal_test(node.state):
+            return node
+        explored.add(node.state)
+        for child in node.expand(problem):
+            if child.state not in explored and child not in frontier:
+                frontier.append(child)
+            elif child in frontier:
+                incumbent = frontier[child]
+                if child.path_cost < incumbent.path_cost:
+                    del frontier[incumbent]
+                    frontier.append(child)
+    return None
+
+
+# ______________________________________________________________________________
+# Main Method
+if __name__ == "__main__":
+    if len(sys.argv) != 3:
+        print("Usage: python script.py <file_path> <algorithm>")
+        sys.exit(1)
+    
+    file_path, algorithm = sys.argv[1], sys.argv[2]
+    initial_state = read_puzzle_state(file_path)
+    problem = EightPuzzle(initial=initial_state)
+
+    if not problem.check_solvability(initial_state):
+        print("The inputted puzzle is not solvable.")
+        sys.exit(1)
+
+    # Solve the puzzle based on the selected algorithm
+    solution = None
+    if algorithm == "BFS":
+        solution = bfs(problem)
+    elif algorithm == "IDS":
+        solution = ids(problem)
+    elif algorithm == "h1":
+        solution = astar(problem, heuristic="h1")
+    elif algorithm == "h2":
+        solution = astar(problem, heuristic="h2")
+    elif algorithm == "h3":
+        solution = astar(problem, heuristic="h3")
+
+    # Output the solution
+    if solution:
+        print("Solution found:", solution)
+    else:
+        print("No solution found.")

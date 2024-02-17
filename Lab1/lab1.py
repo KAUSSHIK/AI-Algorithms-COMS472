@@ -9,6 +9,7 @@ from queue import PriorityQueue
 import argparse
 import time
 import itertools
+import multiprocessing
 
 from utils import *
 
@@ -307,6 +308,18 @@ def astar(problem, heuristic):
 
 # ______________________________________________________________________________
 # Main Method
+def run_search(algorithm, problem, return_dict):
+    if algorithm == "BFS":
+        return_dict['result'] = bfs(problem)
+    elif algorithm == "IDS":
+        return_dict['result'] = ids(problem)
+    elif algorithm == "h1":
+        return_dict['result'] = astar(problem, problem.h1)
+    elif algorithm == "h2":
+        return_dict['result'] = astar(problem, problem.h2)
+    elif algorithm == "h3":
+        return_dict['result'] = astar(problem, problem.h3)    
+
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description="Solve an 8-puzzle problem with a specified algorithm.")
@@ -321,32 +334,39 @@ if __name__ == "__main__":
     if not problem.check_solvability(initial_state):
         print("The inputted puzzle is not solvable.")
         sys.exit(1)
-
+    
     # Solve the puzzle based on the selected algorithm
     solution = None
-    if args.alg == "BFS":
-        solution, nodes_generated, total_time = bfs(problem)
-    elif args.alg == "IDS":
-        solution, nodes_generated, total_time = ids(problem)
-    elif args.alg == "h1":
-        solution, nodes_generated, total_time = astar(problem,problem.h1)
-    elif args.alg == "h2":
-        solution, nodes_generated, total_time = astar(problem, problem.h2)
-    elif args.alg == "h3":
-        solution, nodes_generated, total_time = astar(problem, problem.h3)
 
-    # Output the solution
-    if solution:
-        actions = solution.solution()
-        path_length = len(actions)
+    manager = multiprocessing.Manager()
+    return_dict = manager.dict()
 
-        minutes, remainder = divmod(total_time, 60)
-        seconds, milliseconds = divmod(remainder, 1)
-        milliseconds *= 1000  # convert from seconds to milliseconds
+    # Create a process to run the search algorithm
+    process = multiprocessing.Process(target=run_search, args=(args.alg, problem, return_dict))
+    process.start()
 
-        print("Total nodes generated:", nodes_generated)
-        print(f"Total time taken: {int(minutes)} minutes {int(seconds)} seconds {int(milliseconds)} milliseconds")
-        print("Path length:", path_length)
-        print("Path:", solution)
+    # Wait for the process to complete or until the time limit is reached
+    process.join(15 * 60)  # 15 minutes in seconds
+
+    if process.is_alive():
+        print("Total nodes generated: <<??>>")
+        print("Total time taken >15 min")
+        print("Path length: Timed out.")
+        print("Path: Timed out.")
+        process.terminate()
     else:
-        print("No solution found.")
+        solution, nodes_generated, total_time = return_dict['result']
+        if solution is not None:
+            minutes, remainder = divmod(total_time, 60)
+            seconds, milliseconds = divmod(remainder, 1)
+            milliseconds *= 1000  # convert from seconds to milliseconds
+
+            actions = solution.solution()
+            path_length = len(actions)
+
+            print("Total nodes generated:", nodes_generated)
+            print(f"Total time taken: {int(minutes)} minutes {int(seconds)} seconds {int(milliseconds)} milliseconds")
+            print("Path length:", path_length)
+            print("Path:", solution.solution())
+        else:
+            print("No solution")

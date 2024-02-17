@@ -8,6 +8,7 @@ from collections import deque
 from queue import PriorityQueue
 import argparse
 import time
+import itertools
 
 from utils import *
 
@@ -221,28 +222,36 @@ class SimpleProblemSolvingAgentProgram:
 # SEARCH ALGORITHMS
 def bfs(problem):
     """Breadth First Search"""
+    start_time = time.time()
     node = Node(problem.initial)
+    nodes_generated = 1
     if problem.goal_test(node.state):
-        return node
+        return node, nodes_generated, time.time() - start_time
     frontier = deque([node])
     explored = set()
     while frontier:
         node = frontier.popleft()
         explored.add(node.state)
         for child in node.expand(problem):
+            nodes_generated += 1
             if child.state not in explored and child not in frontier:
                 if problem.goal_test(child.state):
                     return child
                 frontier.append(child)
-    return None
+    return None, nodes_generated, time.time() - start_time
 
 def ids(problem, limit=50):
     """Iterative Deepening Search"""
-    for depth in range(limit):
-        result = dls(problem, depth)
-        if result:
-            return result
-    return None
+    start_time = time.time()
+    nodes_generated = 0
+    for depth in itertools.count():
+        if depth > limit:
+            return None, nodes_generated, time.time() - start_time
+        result, nodes = dls(problem, depth)
+        nodes_generated += nodes
+        if result is not None:
+            return result, nodes_generated, time.time() - start_time
+    return None, nodes_generated, time.time() - start_time
 
 def dls(problem, limit):
     """Depth Limited Search"""
@@ -267,31 +276,33 @@ def recursive_dls(node, problem, limit):
     
 def astar(problem, heuristic):
     """A* Search"""
-    if heuristic == "h1":
-        heuristic = problem.h1
-    elif heuristic == "h2":
-        heuristic = problem.h2
-    else:
-        heuristic = problem.h3
-
+    start_time = time.time()
     node = Node(problem.initial)
-    frontier = PriorityQueue('min', f=lambda node: node.path_cost + heuristic(node))
+    nodes_generated = 1
+    frontier = PriorityQueue('min', heuristic(node))
     frontier.append(node)
     explored = set()
+
+    def f(node):
+        """A* heuristic function - cost from start to node + estimated cost from node to goal"""
+        return node.path_cost + heuristic(node)
+
     while frontier:
         node = frontier.pop()
         if problem.goal_test(node.state):
-            return node
+            return node, nodes_generated, time.time() - start_time
         explored.add(node.state)
         for child in node.expand(problem):
+            nodes_generated += 1
             if child.state not in explored and child not in frontier:
                 frontier.append(child)
-            elif child in frontier:
-                incumbent = frontier[child]
-                if child.path_cost < incumbent.path_cost:
+            elif child.state in frontier:
+                incumbent = frontier[child.state]
+                if f(child) < f(incumbent):
                     del frontier[incumbent]
                     frontier.append(child)
-    return None
+    return None, nodes_generated, time.time() - start_time
+
 
 
 # ______________________________________________________________________________
@@ -314,22 +325,27 @@ if __name__ == "__main__":
     # Solve the puzzle based on the selected algorithm
     solution = None
     if args.alg == "BFS":
-        solution = bfs(problem)
+        solution, nodes_generated, total_time = bfs(problem)
     elif args.alg == "IDS":
-        solution = ids(problem)
+        solution, nodes_generated, total_time = ids(problem)
     elif args.alg == "h1":
-        solution = astar(problem, heuristic="h1")
+        solution, nodes_generated, total_time = astar(problem,problem.h1)
     elif args.alg == "h2":
-        solution = astar(problem, heuristic="h2")
+        solution, nodes_generated, total_time = astar(problem, problem.h2)
     elif args.alg == "h3":
-        solution = astar(problem, heuristic="h3")
+        solution, nodes_generated, total_time = astar(problem, problem.h3)
 
     # Output the solution
     if solution:
         actions = solution.solution()
         path_length = len(actions)
-        print("Total nodes generated:", )
-        print("Total time taken:", )
+
+        minutes, remainder = divmod(total_time, 60)
+        seconds, milliseconds = divmod(remainder, 1)
+        milliseconds *= 1000  # convert from seconds to milliseconds
+
+        print("Total nodes generated:", nodes_generated)
+        print(f"Total time taken: {int(minutes)} minutes {int(seconds)} seconds {int(milliseconds)} milliseconds")
         print("Path length:", path_length)
         print("Path:", solution)
     else:

@@ -3,7 +3,6 @@ COMS 472 : AI - Lab 1
 Author: Kausshik Manojkumar
 """
 import sys
-print(sys.executable)
 from collections import deque
 from queue import PriorityQueue
 import argparse
@@ -208,6 +207,8 @@ def bfs(problem):
     frontier = deque([node])
     explored = set()
     while frontier:
+        if(time.time() - start_time > 900):
+            return (None, nodes_generated, 'timedout')
         node = frontier.popleft()
         explored.add(node.state)
         for child in node.expand(problem):
@@ -223,13 +224,15 @@ def ids(problem, limit=50):
     start_time = time.time()
     nodes_generated = 0
     for depth in itertools.count():
+        if(time.time() - start_time > 900):
+            return (None, nodes_generated, 'timedout')
         if depth > limit:
             return (None, nodes_generated, time.time() - start_time)
         if(time.time() - start_time > 900):
-            return (None, nodes_generated, time.time() - start_time)
+            return (None, nodes_generated, 'timedout')
         result, new_nodes = dls(problem, depth)
         if(time.time() - start_time > 900):
-            return (None, nodes_generated, time.time() - start_time)
+            return (None, nodes_generated, 'timedout')
         nodes_generated += new_nodes
         if result not in ['cutoff', None]:
             return (result, nodes_generated, time.time() - start_time)
@@ -275,6 +278,8 @@ def astar(problem, heuristic):
     explored = set()
 
     while frontier:
+        if(time.time() - start_time > 900):
+            return (None, nodes_generated, 'timedout')
         node = heapq.heappop(frontier)[1]
         if problem.goal_test(node.state):
             return (node, nodes_generated, time.time() - start_time)
@@ -315,40 +320,48 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
     
-    print("File Path: ", args.fPath)
-    print("Algorithm: ", args.alg)
+    #print("File Path: ", args.fPath)
+    #print("Algorithm: ", args.alg)
 
     initial_state = read_puzzle_state(args.fPath)
-    print("Initial State: ", initial_state)
+    #print("Initial State: ", initial_state)
     problem = EightPuzzle(initial=initial_state)
-    print(problem.check_solvability(initial_state))
+    #print(problem.check_solvability(initial_state))
 
     if not problem.check_solvability(initial_state):
-        print("The inputted puzzle is not solvable.")
-        sys.exit(1)
+       print("Total nodes generated: UNSOLVABLE")
+       print("Total time taken: UNSOLVABLE")
+       print("Path length: UNSOLVABLE")
+       print("Path: UNSOLVABLE")
+       sys.exit(1)
 
     # start_time = time.time()
     if args.alg == "BFS":
-        print("BFS is called")
+        #print("BFS is called")
         solution_node, nodes_generated, total_time = bfs(problem)
     elif args.alg == "IDS":
-        print("IDS is called")
+        #print("IDS is called")
         solution_node, nodes_generated, total_time = ids(problem)
     elif args.alg == "h1":
-        print("A* with h1 is called")
+        #print("A* with h1 is called")
         solution_node, nodes_generated, total_time = astar(problem, problem.h1)
     elif args.alg == "h2":
-        print("A* with h2 is called")
+        #print("A* with h2 is called")
         solution_node, nodes_generated, total_time = astar(problem, problem.h2)
     elif args.alg == "h3":
-        print("A* with h3 is called")
+        #print("A* with h3 is called")
         solution_node, nodes_generated, total_time = astar(problem, problem.h3)
 
     # end_time = time.time()
     # total_time = end_time - start_time
     
     # Solve the puzzle based on the selected algorithm
-    solution = solution_node.solution()
+    if solution_node is not None:
+        solution = solution_node.solution()
+    elif solution_node is None and total_time == 'timedout':
+        solution = None
+    else:
+        solution = None    
 
     # Create a process to run the search algorithm
     # if process.is_alive():
@@ -366,9 +379,17 @@ if __name__ == "__main__":
         actions = solution_node.solution()
         path_length = len(actions)
 
-        print("Total nodes generated:", nodes_generated)
+        print("Total nodes generated: ", nodes_generated)
         print(f"Total time taken: {int(minutes)} minutes {int(seconds)} seconds {int(milliseconds)} milliseconds")
         print("Path length:", path_length)
         print("Path:", concatenate_modify_list(solution))
+    elif solution is None and total_time == 'timedout':
+        print("Total nodes generated: ", nodes_generated)
+        print("Total time taken >15 min")
+        print("Path length: Timed out.")
+        print("Path: Timed out.")
     else:
-        print("No solution")
+       print("Total nodes generated: No solution found")
+       print("Total time taken: No solution found")
+       print("Path length: No solution found")
+       print("Path: No solution found")

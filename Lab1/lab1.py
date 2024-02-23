@@ -10,6 +10,7 @@ import time
 import itertools
 import heapq
 import math
+import os
 
 from utils import *
 
@@ -198,29 +199,35 @@ class Node:
 # ______________________________________________________________________________
 # SEARCH ALGORITHMS
 def bfs(problem):
-    """Breadth First Search"""
+    print("BFS")
     start_time = time.time()
-    node = Node(problem.initial)
-    nodes_generated = 1
-    if problem.goal_test(node.state):
-        return (node, nodes_generated, time.time() - start_time)
-    frontier = deque([node])
+    initial_state = Node(problem.initial)
+    frontier = deque([initial_state])
     explored = set()
+    nodes_generated = 0
+
     while frontier:
         if(time.time() - start_time > 900):
             return (None, nodes_generated, 'timedout')
-        node = frontier.popleft()
-        explored.add(node.state)
-        for child in node.expand(problem):
-            nodes_generated += 1
-            if child.state not in explored and child not in frontier:
-                if problem.goal_test(child.state):
-                    return (child, nodes_generated, time.time() - start_time)
+        
+        current_node = frontier.popleft()
+        explored.add(current_node)
+        nodes_generated += 1
+
+        if problem.goal_test(current_node.state):
+            return (current_node, nodes_generated, time.time() - start_time)
+        
+        explored.add(current_node.state)
+
+        for child in current_node.expand(problem):
+            if child.state not in explored and child not in frontier:  # Check if the state has been explored
                 frontier.append(child)
+
     return (None, nodes_generated, time.time() - start_time)
 
 def ids(problem, limit=50):
     """Iterative Deepening Search"""
+    print("IDS")
     start_time = time.time()
     nodes_generated = 0
     for depth in itertools.count():
@@ -263,6 +270,7 @@ def recursive_dls(node, problem, limit, nodes_generated):
         return ('cutoff' if cutoff_occurred else None), nodes_generated
     
 def astar(problem, heuristic):
+    print("A* " + ("h1" if heuristic == problem.h1 else ("h2" if heuristic == problem.h2 else "h3")))
     """A* Search"""
     def f(node):
         """A* heuristic function - cost from start to node + estimated cost from node to goal"""
@@ -312,16 +320,108 @@ def concatenate_modify_list(lst):
     # Use the translation table to replace the characters
     return s.translate(trans)
 
+def automate_part2():
+    algorithms = ['BFS','IDS','h1', 'h2', 'h3']
+    filepaths = ['./Part2/S1.txt', './Part2/S2.txt', './Part2/S3.txt', './Part2/S4.txt', './Part2/S5.txt']
+    with open("./Part2Output.txt", "w") as outF:
+        for f in filepaths:
+            initial_state = read_puzzle_state(f)
+            problem = EightPuzzle(initial=initial_state)
+            if not problem.check_solvability(initial_state):
+                s = "UNSOLVABLE"
+                outF.write(f +": "+ s + "\n\n")
+                continue
+            for a in algorithms:
+                if a == "BFS":
+                    solution_node, nodes_generated, total_time = bfs(problem)
+                elif a == "IDS":
+                    solution_node, nodes_generated, total_time = ids(problem)
+                elif a == "h1":
+                    solution_node, nodes_generated, total_time = astar(problem, problem.h1)
+                elif a == "h2":
+                    solution_node, nodes_generated, total_time = astar(problem, problem.h2)
+                elif a == "h3":
+                    solution_node, nodes_generated, total_time = astar(problem, problem.h3)
+
+                if solution_node is not None:
+                    solution = solution_node.solution()
+                elif solution_node is None and total_time == 'timedout':
+                    solution = None
+                else:
+                    solution = None
+                
+                if solution is not None:
+                    minutes, remainder = divmod(total_time, 60)
+                    seconds, milliseconds = divmod(remainder, 1)
+                    milliseconds *= 1000  # convert from seconds to milliseconds
+
+                    actions = solution_node.solution()
+                    path_length = len(actions)
+
+                    s = f"Total nodes generated: {nodes_generated}\nTotal time taken: {int(minutes)} minutes {int(seconds)} seconds {int(milliseconds)} milliseconds\nPath length: {path_length}\nPath: {concatenate_modify_list(solution)}"
+                elif solution is None and total_time == 'timedout':
+                    s = f"Total nodes generated: {nodes_generated}\nTotal time taken >15 min\nPath length: Timed out.\nPath: Timed out."
+                else:
+                    s = "Total nodes generated: No solution found\nTotal time taken: No solution found\nPath length: No solution found\nPath: No solution found"
+                
+                algorithm = a if a in ["BFS", "IDS"] else f"A* {a}"
+                outF.write(f"{f}: ALGORITHM USED => {algorithm} {s}\n")
+            outF.write("\n\n")
+
+def automate_part3():
+    algorithms =  ['BFS','IDS','h1', 'h2', 'h3']
+    folder_dirs = ['./Part3/L8/', './Part3/L15/', './Part3/L24/']
+    with open("./Part3Output.txt", "w") as outF:
+        for d in folder_dirs:
+            for filename in os.listdir(d):
+                if filename.endswith(".txt"):
+                    initial_state = read_puzzle_state(d + filename)
+                    problem = EightPuzzle(initial=initial_state)
+                    if not problem.check_solvability(initial_state):
+                        s = "UNSOLVABLE"
+                        outF.write(filename +": "+ s + "\n\n")
+                        continue
+                    for a in algorithms:
+                        if a == "BFS":
+                            solution_node, nodes_generated, total_time = bfs(problem)
+                        elif a == "IDS":
+                            solution_node, nodes_generated, total_time = ids(problem)
+                        elif a == "h1":
+                            solution_node, nodes_generated, total_time = astar(problem, problem.h1)
+                        elif a == "h2":
+                            solution_node, nodes_generated, total_time = astar(problem, problem.h2)
+                        elif a == "h3":
+                            solution_node, nodes_generated, total_time = astar(problem, problem.h3)
+
+                        if solution_node is not None:
+                            solution = solution_node.solution()
+                        elif solution_node is None and total_time == 'timedout':
+                            solution = None
+                        else:
+                            solution = None
+                        
+                        if solution is not None:
+                            minutes, remainder = divmod(total_time, 60)
+                            seconds, milliseconds = divmod(remainder, 1)
+                            milliseconds *= 1000
+
+
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description="Solve an 8-puzzle problem with a specified algorithm.")
-    parser.add_argument('--fPath', type=str, required=True, help='File path of the puzzle state')
-    parser.add_argument('--alg', type=str, required=True, choices=['BFS', 'IDS', 'h1', 'h2', 'h3'], help='Algorithm to use for solving the puzzle')
+    parser.add_argument('--runPart2', action='store_true')
+    parser.add_argument('--runPart3', action='store_true')
+    parser.add_argument('--fPath', type=str, help='File path of the puzzle state')
+    parser.add_argument('--alg', type=str, choices=['BFS', 'IDS', 'h1', 'h2', 'h3'], help='Algorithm to use for solving the puzzle')
 
     args = parser.parse_args()
     
     #print("File Path: ", args.fPath)
     #print("Algorithm: ", args.alg)
+
+    if args.runPart2:
+        automate_part2()
+        sys.exit(0)
 
     initial_state = read_puzzle_state(args.fPath)
     #print("Initial State: ", initial_state)

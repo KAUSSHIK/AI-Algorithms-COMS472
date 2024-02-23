@@ -38,3 +38,14 @@ nodes generated for all the five algorithms.
 
 THE LOG FOR THIS HAS BEEN GENERATED, AND THE OUTPUT IS IN THE FILE `Part3Output.txt`
 The computation time and the number of nodes generated for each algorithm for each level of the puzzle has been calculated and tabulated below:
+
+## HOW TO RUN THE CODE
+1. Make sure you have python installed on your system.
+2. cd into Lab1 directory using the command `cd Lab1`
+3. Run the following command in the terminal:
+   `python3 lab1.py --fPath <file_path> --alg <algorithm>`
+   where `<file_path>` is the path to the file containing the initial state of the 8-puzzle problem and `<algorithm>` is the algorithm to be used to solve the problem. The algorithm can be one of the following: BFS, IDS, h1, h2, h3.
+4. To generate output for Part 2, run the following command:
+   `python3 lab1.py --runPart2`
+5. To generate output for Part 3, run the following command:
+    `python3 lab1.py --runPart3`

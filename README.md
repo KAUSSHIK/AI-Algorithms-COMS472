@@ -27,9 +27,14 @@ whether the puzzle is solvable or not before attempting to solve it.
 ## Part 2
 Need to run code on all files given in folder 'Part2' and compile all your results into a single file, indicating which file/state leads to which output for each algorithm.
 
+THIS HAS BEEN SOLVED, AND THE OUTPUT IS IN THE FILE `Part2Output.txt`
+
 ## Part 3
 In this part, you will compare the performance of the algorithms you have coded.
 1. In file part3.zip you’ll find 60 8-puzzles. 20 from each of 8, 15, and 24 levels, where the level indicates the optimal path length of the state from the goal.
 2. For states in each level solve the puzzle and calculate the average run time and average
 nodes generated for all the five algorithms.
 3. Tabulate your results in the form of a table as shown below. Also, discuss conclusions drawn from the performance of different algorithm
+
+THE LOG FOR THIS HAS BEEN GENERATED, AND THE OUTPUT IS IN THE FILE `Part3Output.txt`
+The computation time and the number of nodes generated for each algorithm for each level of the puzzle has been calculated and tabulated below:

@@ -1,3 +1,4 @@
+--P1
 258.txt: ALGORITHM USED => BFS
 Total nodes generated: 259
 Total time taken: 0 minutes 0 seconds 8 milliseconds
@@ -537,7 +538,7 @@ Total time taken: 0 minutes 0 seconds 0 milliseconds
 Path length: 8
 Path: RURDLLUU
 
-
+--P2
 5120.txt: ALGORITHM USED => BFS
 Total nodes generated: 7027
 Total time taken: 0 minutes 3 seconds 546 milliseconds
@@ -1077,7 +1078,7 @@ Total time taken: 0 minutes 0 seconds 1 milliseconds
 Path length: 15
 Path: RRULDRDLLURRULL
 
-
+--P3
 131449.txt: ALGORITHM USED => BFS
 Total nodes generated: 122867
 Total time taken: 7 minutes 7 seconds 458 milliseconds

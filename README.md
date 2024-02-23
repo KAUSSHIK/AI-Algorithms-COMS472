@@ -39,6 +39,9 @@ nodes generated for all the five algorithms.
 THE LOG FOR THIS HAS BEEN GENERATED, AND THE OUTPUT IS IN THE FILE `Part3Output.txt`
 The computation time and the number of nodes generated for each algorithm for each level of the puzzle has been calculated and tabulated below:
 
+![image](https://github.com/KAUSSHIK/AI-Algorithms-COMS472/assets/32772050/c1376291-23a4-4f13-947b-37989103d0b2)
+
+
 ## HOW TO RUN THE CODE
 1. Make sure you have python installed on your system.
 2. cd into Lab1 directory using the command `cd Lab1`

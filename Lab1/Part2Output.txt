@@ -1,42 +1,52 @@
-./Part2/S1.txt: ALGORITHM USED => BFS Total nodes generated: 118291
+./Part2/S1.txt: ALGORITHM USED => BFS 
+Total nodes generated: 118291
 Total time taken: 4 minutes 18 seconds 437 milliseconds
 Path length: 24
 Path: DDLUULDRRULLDRRDLLURRULL
-./Part2/S1.txt: ALGORITHM USED => IDS Total nodes generated: 657392930
+./Part2/S1.txt: ALGORITHM USED => IDS 
+Total nodes generated: 657392930
 Total time taken >15 min
 Path length: Timed out.
 Path: Timed out.
-./Part2/S1.txt: ALGORITHM USED => A* h1 Total nodes generated: 40610
+./Part2/S1.txt: ALGORITHM USED => A* h1 
+Total nodes generated: 40610
 Total time taken: 0 minutes 19 seconds 775 milliseconds
 Path length: 24
 Path: DDLUULDRRULLDRRDLLURRULL
-./Part2/S1.txt: ALGORITHM USED => A* h2 Total nodes generated: 3954
+./Part2/S1.txt: ALGORITHM USED => A* h2 
+Total nodes generated: 3954
 Total time taken: 0 minutes 0 seconds 234 milliseconds
 Path length: 24
 Path: DDLUULDRRULLDRRDLLURRULL
-./Part2/S1.txt: ALGORITHM USED => A* h3 Total nodes generated: 7137
+./Part2/S1.txt: ALGORITHM USED => A* h3 
+Total nodes generated: 7137
 Total time taken: 0 minutes 0 seconds 722 milliseconds
 Path length: 24
 Path: DDLUULDRRULLDRRDLLURRULL
 
 
-./Part2/S2.txt: ALGORITHM USED => BFS Total nodes generated: 41330
+./Part2/S2.txt: ALGORITHM USED => BFS 
+Total nodes generated: 41330
 Total time taken: 1 minutes 31 seconds 606 milliseconds
 Path length: 20
 Path: DDLLURULDRRDLLURRULL
-./Part2/S2.txt: ALGORITHM USED => IDS Total nodes generated: 235565786
+./Part2/S2.txt: ALGORITHM USED => IDS 
+Total nodes generated: 235565786
 Total time taken >15 min
 Path length: Timed out.
 Path: Timed out.
-./Part2/S2.txt: ALGORITHM USED => A* h1 Total nodes generated: 5629
+./Part2/S2.txt: ALGORITHM USED => A* h1 
+Total nodes generated: 5629
 Total time taken: 0 minutes 0 seconds 436 milliseconds
 Path length: 20
 Path: DDLLURULDRRDLLURRULL
-./Part2/S2.txt: ALGORITHM USED => A* h2 Total nodes generated: 179
+./Part2/S2.txt: ALGORITHM USED => A* h2 
+Total nodes generated: 179
 Total time taken: 0 minutes 0 seconds 1 milliseconds
 Path length: 20
 Path: DDLLURULDRRDLLURRULL
-./Part2/S2.txt: ALGORITHM USED => A* h3 Total nodes generated: 690
+./Part2/S2.txt: ALGORITHM USED => A* h3 
+Total nodes generated: 690
 Total time taken: 0 minutes 0 seconds 10 milliseconds
 Path length: 20
 Path: DDLLURULDRRDLLURRULL
@@ -44,45 +54,56 @@ Path: DDLLURULDRRDLLURRULL
 
 ./Part2/S3.txt: UNSOLVABLE
 
-./Part2/S4.txt: ALGORITHM USED => BFS Total nodes generated: 181439
+
+./Part2/S4.txt: ALGORITHM USED => BFS 
+Total nodes generated: 181439
 Total time taken: 9 minutes 8 seconds 668 milliseconds
 Path length: 31
 Path: DDRUULLDDRURULLDDRURULLDDRRUULL
-./Part2/S4.txt: ALGORITHM USED => IDS Total nodes generated: 328696446
+./Part2/S4.txt: ALGORITHM USED => IDS 
+Total nodes generated: 328696446
 Total time taken >15 min
 Path length: Timed out.
 Path: Timed out.
-./Part2/S4.txt: ALGORITHM USED => A* h1 Total nodes generated: 272216
+./Part2/S4.txt: ALGORITHM USED => A* h1 
+Total nodes generated: 272216
 Total time taken >15 min
 Path length: Timed out.
 Path: Timed out.
-./Part2/S4.txt: ALGORITHM USED => A* h2 Total nodes generated: 19433
+./Part2/S4.txt: ALGORITHM USED => A* h2 
+Total nodes generated: 19433
 Total time taken: 0 minutes 4 seconds 724 milliseconds
 Path length: 31
 Path: LDRDLURURDDLUURDDLUULDDRUURDLLU
-./Part2/S4.txt: ALGORITHM USED => A* h3 Total nodes generated: 127204
+./Part2/S4.txt: ALGORITHM USED => A* h3 
+Total nodes generated: 127204
 Total time taken: 3 minutes 6 seconds 280 milliseconds
 Path length: 31
 Path: LDDRRUULLDRRULLDRDLURDRUULLDRUL
 
 
-./Part2/S5.txt: ALGORITHM USED => BFS Total nodes generated: 103
+./Part2/S5.txt: ALGORITHM USED => BFS 
+Total nodes generated: 103
 Total time taken: 0 minutes 0 seconds 1 milliseconds
 Path length: 6
 Path: RDLUUL
-./Part2/S5.txt: ALGORITHM USED => IDS Total nodes generated: 1244
+./Part2/S5.txt: ALGORITHM USED => IDS 
+Total nodes generated: 1244
 Total time taken: 0 minutes 0 seconds 2 milliseconds
 Path length: 6
 Path: RDLUUL
-./Part2/S5.txt: ALGORITHM USED => A* h1 Total nodes generated: 28
+./Part2/S5.txt: ALGORITHM USED => A* h1 
+Total nodes generated: 28
 Total time taken: 0 minutes 0 seconds 0 milliseconds
 Path length: 6
 Path: RDLUUL
-./Part2/S5.txt: ALGORITHM USED => A* h2 Total nodes generated: 20
+./Part2/S5.txt: ALGORITHM USED => A* h2 
+Total nodes generated: 20
 Total time taken: 0 minutes 0 seconds 0 milliseconds
 Path length: 6
 Path: RDLUUL
-./Part2/S5.txt: ALGORITHM USED => A* h3 Total nodes generated: 25
+./Part2/S5.txt: ALGORITHM USED => A* h3 
+Total nodes generated: 25
 Total time taken: 0 minutes 0 seconds 0 milliseconds
 Path length: 6
 Path: RDLUUL

@@ -49,3 +49,5 @@ The computation time and the number of nodes generated for each algorithm for ea
    `python3 lab1.py --runPart2`
 5. To generate output for Part 3, run the following command:
     `python3 lab1.py --runPart3`
+6. To watch the statistics of the algorithms, run the following command:
+    `python3 calculateStats.py`

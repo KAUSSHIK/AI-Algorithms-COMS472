@@ -9,7 +9,8 @@ from queue import PriorityQueue
 import argparse
 import time
 import itertools
-import multiprocessing
+import heapq
+import math
 
 from utils import *
 
@@ -24,7 +25,7 @@ class EightPuzzle:
     __init__, goal_test, and path_cost. Then you will create instances
     of your subclass and solve them with the various search functions."""
 
-    def __init__(self, initial, goal=(1,2,3,4,5,6,7,8,9,0)): # Constructor
+    def __init__(self, initial, goal=(1,2,3,4,5,6,7,8,0)): # Constructor
         """The constructor specifies the initial state, and possibly a goal
         state, if there is a unique goal."""
         self.initial = initial
@@ -96,6 +97,7 @@ class EightPuzzle:
                     num_inversions += 1
         return num_inversions % 2 == 0
     
+
     def h1(self, node):
         """ Return the heuristic value for a given state. Default heuristic function used is 
         h(n) = number of misplaced tiles """
@@ -103,11 +105,25 @@ class EightPuzzle:
     
     def h2(self, node):
         """ Return the heuristic value for a given state. Manhattan distance heuristic function is used """   
-        return sum(manhattan_distance(s, g) for (s, g) in zip(node.state, self.goal))
+        """Heuristic function that calculates the total Manhattan distance of a puzzle state from the goal state."""
+        state = node.state
+        goal = self.goal
+        total_distance = 0
+        for i in range(1, 9):  # Assuming 8-puzzle
+            dx, dy = abs(state.index(i) % 3 - goal.index(i) % 3), abs(state.index(i) // 3 - goal.index(i) // 3)
+            total_distance += dx + dy
+        return total_distance
     
     def h3(self, node):
         """ Return the heuristic value for a given state. Gaschnig's heuristic"""
-        return sum(gaschnig_distance(s, g) for (s, g) in zip(node.state, self.goal))
+        """Heuristic function that calculates the total Euclidean distance of a puzzle state from the goal state."""
+        state = node.state
+        goal = self.goal
+        total_distance = 0
+        for i in range(1, 9):  # Assuming 8-puzzle
+            dx, dy = abs(state.index(i) % 3 - goal.index(i) % 3), abs(state.index(i) // 3 - goal.index(i) // 3)
+            total_distance += math.sqrt(dx * dx + dy * dy)
+        return total_distance
 
     #Unused - might remove
     def value(self, state):
@@ -188,7 +204,7 @@ def bfs(problem):
     node = Node(problem.initial)
     nodes_generated = 1
     if problem.goal_test(node.state):
-        return node, nodes_generated, time.time() - start_time
+        return (node, nodes_generated, time.time() - start_time)
     frontier = deque([node])
     explored = set()
     while frontier:
@@ -198,9 +214,9 @@ def bfs(problem):
             nodes_generated += 1
             if child.state not in explored and child not in frontier:
                 if problem.goal_test(child.state):
-                    return child
+                    return (child, nodes_generated, time.time() - start_time)
                 frontier.append(child)
-    return None, nodes_generated, time.time() - start_time
+    return (None, nodes_generated, time.time() - start_time)
 
 def ids(problem, limit=50):
     """Iterative Deepening Search"""
@@ -208,12 +224,12 @@ def ids(problem, limit=50):
     nodes_generated = 0
     for depth in itertools.count():
         if depth > limit:
-            return None, nodes_generated, time.time() - start_time
+            return (None, nodes_generated, time.time() - start_time)
         result, nodes = dls(problem, depth)
         nodes_generated += nodes
         if result is not None:
-            return result, nodes_generated, time.time() - start_time
-    return None, nodes_generated, time.time() - start_time
+            return (result, nodes_generated, time.time() - start_time)
+    return (None, nodes_generated, time.time() - start_time)
 
 def dls(problem, limit):
     """Depth Limited Search"""
@@ -238,48 +254,51 @@ def recursive_dls(node, problem, limit):
     
 def astar(problem, heuristic):
     """A* Search"""
-    start_time = time.time()
-    node = Node(problem.initial)
-    nodes_generated = 1
-    frontier = PriorityQueue('min', heuristic(node))
-    frontier.append(node)
-    explored = set()
-
     def f(node):
         """A* heuristic function - cost from start to node + estimated cost from node to goal"""
         return node.path_cost + heuristic(node)
+    
+    start_time = time.time()
+    node = Node(problem.initial)
+    nodes_generated = 1
+    if problem.goal_test(node.state):
+        return (node, nodes_generated, time.time() - start_time)
+    frontier = []
+    heapq.heappush(frontier, (f(node), node))
+    explored = set()
 
     while frontier:
-        node = frontier.pop()
+        node = heapq.heappop(frontier)[1]
         if problem.goal_test(node.state):
-            return node, nodes_generated, time.time() - start_time
+            return (node, nodes_generated, time.time() - start_time)
         explored.add(node.state)
         for child in node.expand(problem):
             nodes_generated += 1
-            if child.state not in explored and child not in frontier:
-                frontier.append(child)
-            elif child.state in frontier:
-                incumbent = frontier[child.state]
-                if f(child) < f(incumbent):
-                    del frontier[incumbent]
-                    frontier.append(child)
-    return None, nodes_generated, time.time() - start_time
+            if child.state not in explored and child not in [item[1].state for item in frontier]:
+                heapq.heappush(frontier, (f(child), child))
+            elif child.state in [item[1].state for item in frontier]:
+                index = [item[1].state for item in frontier].index(child.state)
+                if f(child) < frontier[index][0]:
+                    frontier[index] = (f(child), child)
+                    heapq.heapify(frontier)
+    return (None, nodes_generated, time.time() - start_time)
 
 
 
 # ______________________________________________________________________________
 # Main Method
-def run_search(algorithm, problem, return_dict):
-    if algorithm == "BFS":
-        return_dict['result'] = bfs(problem)
-    elif algorithm == "IDS":
-        return_dict['result'] = ids(problem)
-    elif algorithm == "h1":
-        return_dict['result'] = astar(problem, problem.h1)
-    elif algorithm == "h2":
-        return_dict['result'] = astar(problem, problem.h2)
-    elif algorithm == "h3":
-        return_dict['result'] = astar(problem, problem.h3)    
+def concat_list(lst):
+    return ''.join(str(i) for i in lst)
+
+def concatenate_modify_list(lst):
+    # Join the characters into a string
+    s = ''.join(lst)
+    
+    # Create a translation table
+    trans = str.maketrans('UDLR', 'DURL')
+    
+    # Use the translation table to replace the characters
+    return s.translate(trans)
 
 if __name__ == "__main__":
 
@@ -289,45 +308,60 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
     
+    print("File Path: ", args.fPath)
+    print("Algorithm: ", args.alg)
+
     initial_state = read_puzzle_state(args.fPath)
+    print("Initial State: ", initial_state)
     problem = EightPuzzle(initial=initial_state)
+    print(problem.check_solvability(initial_state))
 
     if not problem.check_solvability(initial_state):
         print("The inputted puzzle is not solvable.")
         sys.exit(1)
+
+    # start_time = time.time()
+    if args.alg == "BFS":
+        print("BFS is called")
+        solution_node, nodes_generated, total_time = bfs(problem)
+    elif args.alg == "IDS":
+        print("IDS is called")
+        solution_node, nodes_generated, total_time = ids(problem)
+    elif args.alg == "h1":
+        print("A* with h1 is called")
+        solution_node, nodes_generated, total_time = astar(problem, problem.h1)
+    elif args.alg == "h2":
+        print("A* with h2 is called")
+        solution_node, nodes_generated, total_time = astar(problem, problem.h2)
+    elif args.alg == "h3":
+        print("A* with h3 is called")
+        solution_node, nodes_generated, total_time = astar(problem, problem.h3)
+
+    # end_time = time.time()
+    # total_time = end_time - start_time
     
     # Solve the puzzle based on the selected algorithm
-    solution = None
-
-    manager = multiprocessing.Manager()
-    return_dict = manager.dict()
+    solution = solution_node.solution()
 
     # Create a process to run the search algorithm
-    process = multiprocessing.Process(target=run_search, args=(args.alg, problem, return_dict))
-    process.start()
+    # if process.is_alive():
+    #     print("Total nodes generated: <<??>>")
+    #     print("Total time taken >15 min")
+    #     print("Path length: Timed out.")
+    #     print("Path: Timed out.")
+    #     process.terminate()
 
-    # Wait for the process to complete or until the time limit is reached
-    process.join(15 * 60)  # 15 minutes in seconds
+    if solution is not None:
+        minutes, remainder = divmod(total_time, 60)
+        seconds, milliseconds = divmod(remainder, 1)
+        milliseconds *= 1000  # convert from seconds to milliseconds
 
-    if process.is_alive():
-        print("Total nodes generated: <<??>>")
-        print("Total time taken >15 min")
-        print("Path length: Timed out.")
-        print("Path: Timed out.")
-        process.terminate()
+        actions = solution_node.solution()
+        path_length = len(actions)
+
+        print("Total nodes generated:", nodes_generated)
+        print(f"Total time taken: {int(minutes)} minutes {int(seconds)} seconds {int(milliseconds)} milliseconds")
+        print("Path length:", path_length)
+        print("Path:", concatenate_modify_list(solution))
     else:
-        solution, nodes_generated, total_time = return_dict['result']
-        if solution is not None:
-            minutes, remainder = divmod(total_time, 60)
-            seconds, milliseconds = divmod(remainder, 1)
-            milliseconds *= 1000  # convert from seconds to milliseconds
-
-            actions = solution.solution()
-            path_length = len(actions)
-
-            print("Total nodes generated:", nodes_generated)
-            print(f"Total time taken: {int(minutes)} minutes {int(seconds)} seconds {int(milliseconds)} milliseconds")
-            print("Path length:", path_length)
-            print("Path:", solution.solution())
-        else:
-            print("No solution")
+        print("No solution")

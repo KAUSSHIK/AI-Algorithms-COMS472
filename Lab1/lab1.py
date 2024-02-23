@@ -1,6 +1,8 @@
 """
 COMS 472 : AI - Lab 1
 Author: Kausshik Manojkumar
+Ciatations:
+- AIMA Python Code : https://github.com/aimacode/aima-python/SEARCH.py
 """
 import sys
 from collections import deque
@@ -16,7 +18,6 @@ from utils import *
 
 # ______________________________________________________________________________
 
-#Define a class for the 8-Puzzle problem -> Problem Class
 #0 - is the blank tile
 
 class EightPuzzle:

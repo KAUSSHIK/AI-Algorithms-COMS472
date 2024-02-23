@@ -225,32 +225,39 @@ def ids(problem, limit=50):
     for depth in itertools.count():
         if depth > limit:
             return (None, nodes_generated, time.time() - start_time)
-        result, nodes = dls(problem, depth)
-        nodes_generated += nodes
-        if result is not None:
+        if(time.time() - start_time > 900):
+            return (None, nodes_generated, time.time() - start_time)
+        result, new_nodes = dls(problem, depth)
+        if(time.time() - start_time > 900):
+            return (None, nodes_generated, time.time() - start_time)
+        nodes_generated += new_nodes
+        if result not in ['cutoff', None]:
             return (result, nodes_generated, time.time() - start_time)
     return (None, nodes_generated, time.time() - start_time)
 
 def dls(problem, limit):
     """Depth Limited Search"""
     node = Node(problem.initial)
-    return recursive_dls(node, problem, limit)
+    nodes_generated = 0  # Initialize node count
+    result = recursive_dls(node, problem, limit, nodes_generated)
+    return result
 
-def recursive_dls(node, problem, limit):
+def recursive_dls(node, problem, limit, nodes_generated):
     """Recursive Depth Limited Search"""
     if problem.goal_test(node.state):
-        return node
+        return node, nodes_generated
     elif limit == 0:
-        return 'cutoff'
+        return 'cutoff', nodes_generated
     else:
         cutoff_occurred = False
         for child in node.expand(problem):
-            result = recursive_dls(child, problem, limit - 1)
+            nodes_generated += 1  # Increment for each child generated
+            result, nodes_generated = recursive_dls(child, problem, limit - 1, nodes_generated)
             if result == 'cutoff':
                 cutoff_occurred = True
             elif result is not None:
-                return result
-        return 'cutoff' if cutoff_occurred else None
+                return result, nodes_generated
+        return ('cutoff' if cutoff_occurred else None), nodes_generated
     
 def astar(problem, heuristic):
     """A* Search"""

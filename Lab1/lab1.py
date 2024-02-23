@@ -403,8 +403,21 @@ def automate_part3():
                         if solution is not None:
                             minutes, remainder = divmod(total_time, 60)
                             seconds, milliseconds = divmod(remainder, 1)
-                            milliseconds *= 1000
+                            milliseconds *= 1000  # convert from seconds to milliseconds
 
+                            actions = solution_node.solution()
+                            path_length = len(actions)
+
+                            s = f"Total nodes generated: {nodes_generated}\nTotal time taken: {int(minutes)} minutes {int(seconds)} seconds {int(milliseconds)} milliseconds\nPath length: {path_length}\nPath: {concatenate_modify_list(solution)}"
+                        elif solution is None and total_time == 'timedout':
+                            s = f"Total nodes generated: {nodes_generated}\nTotal time taken >15 min\nPath length: Timed out.\nPath: Timed out."
+                        else:
+                            s = "Total nodes generated: No solution found\nTotal time taken: No solution found\nPath length: No solution found\nPath: No solution found"
+                        
+                        algorithm = a if a in ["BFS", "IDS"] else f"A* {a}"
+                        outF.write(f"{filename}: ALGORITHM USED => {algorithm}\n{s}\n")
+                    outF.write("\n\n")
+                        
 
 if __name__ == "__main__":
 
@@ -421,6 +434,9 @@ if __name__ == "__main__":
 
     if args.runPart2:
         automate_part2()
+        sys.exit(0)
+    if args.runPart3:
+        automate_part3()
         sys.exit(0)
 
     initial_state = read_puzzle_state(args.fPath)

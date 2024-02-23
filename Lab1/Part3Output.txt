@@ -1,0 +1,1618 @@
+258.txt: ALGORITHM USED => BFS
+Total nodes generated: 259
+Total time taken: 0 minutes 0 seconds 8 milliseconds
+Path length: 8
+Path: RRULDLUU
+258.txt: ALGORITHM USED => IDS
+Total nodes generated: 6188
+Total time taken: 0 minutes 0 seconds 11 milliseconds
+Path length: 8
+Path: RRULDLUU
+258.txt: ALGORITHM USED => A* h1
+Total nodes generated: 40
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: RRULDLUU
+258.txt: ALGORITHM USED => A* h2
+Total nodes generated: 28
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: RRULDLUU
+258.txt: ALGORITHM USED => A* h3
+Total nodes generated: 35
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: RRULDLUU
+
+
+160.txt: ALGORITHM USED => BFS
+Total nodes generated: 159
+Total time taken: 0 minutes 0 seconds 3 milliseconds
+Path length: 8
+Path: UULDRULL
+160.txt: ALGORITHM USED => IDS
+Total nodes generated: 3470
+Total time taken: 0 minutes 0 seconds 6 milliseconds
+Path length: 8
+Path: UULDRULL
+160.txt: ALGORITHM USED => A* h1
+Total nodes generated: 40
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: UULDRULL
+160.txt: ALGORITHM USED => A* h2
+Total nodes generated: 23
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: UULDRULL
+160.txt: ALGORITHM USED => A* h3
+Total nodes generated: 34
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: UULDRULL
+
+
+164.txt: ALGORITHM USED => BFS
+Total nodes generated: 165
+Total time taken: 0 minutes 0 seconds 3 milliseconds
+Path length: 8
+Path: DDRRUULL
+164.txt: ALGORITHM USED => IDS
+Total nodes generated: 2958
+Total time taken: 0 minutes 0 seconds 5 milliseconds
+Path length: 8
+Path: DDRRUULL
+164.txt: ALGORITHM USED => A* h1
+Total nodes generated: 21
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: DDRRUULL
+164.txt: ALGORITHM USED => A* h2
+Total nodes generated: 21
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: DDRRUULL
+164.txt: ALGORITHM USED => A* h3
+Total nodes generated: 21
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: DDRRUULL
+
+
+158.txt: ALGORITHM USED => BFS
+Total nodes generated: 311
+Total time taken: 0 minutes 0 seconds 9 milliseconds
+Path length: 8
+Path: LDRURULL
+158.txt: ALGORITHM USED => IDS
+Total nodes generated: 12403
+Total time taken: 0 minutes 0 seconds 21 milliseconds
+Path length: 8
+Path: LDRURULL
+158.txt: ALGORITHM USED => A* h1
+Total nodes generated: 46
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: LDRURULL
+158.txt: ALGORITHM USED => A* h2
+Total nodes generated: 35
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: LDRURULL
+158.txt: ALGORITHM USED => A* h3
+Total nodes generated: 35
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: LDRURULL
+
+
+238.txt: ALGORITHM USED => BFS
+Total nodes generated: 246
+Total time taken: 0 minutes 0 seconds 5 milliseconds
+Path length: 8
+Path: RDLDRULU
+238.txt: ALGORITHM USED => IDS
+Total nodes generated: 5771
+Total time taken: 0 minutes 0 seconds 9 milliseconds
+Path length: 8
+Path: RDLDRULU
+238.txt: ALGORITHM USED => A* h1
+Total nodes generated: 45
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: RDLDRULU
+238.txt: ALGORITHM USED => A* h2
+Total nodes generated: 25
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: RDLDRULU
+238.txt: ALGORITHM USED => A* h3
+Total nodes generated: 27
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: RDLDRULU
+
+
+210.txt: ALGORITHM USED => BFS
+Total nodes generated: 243
+Total time taken: 0 minutes 0 seconds 6 milliseconds
+Path length: 8
+Path: RDLDRUUL
+210.txt: ALGORITHM USED => IDS
+Total nodes generated: 5764
+Total time taken: 0 minutes 0 seconds 9 milliseconds
+Path length: 8
+Path: RDLDRUUL
+210.txt: ALGORITHM USED => A* h1
+Total nodes generated: 54
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: RDLDRUUL
+210.txt: ALGORITHM USED => A* h2
+Total nodes generated: 39
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: RDLDRUUL
+210.txt: ALGORITHM USED => A* h3
+Total nodes generated: 45
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: RDLDRUUL
+
+
+198.txt: ALGORITHM USED => BFS
+Total nodes generated: 226
+Total time taken: 0 minutes 0 seconds 5 milliseconds
+Path length: 8
+Path: RUULDRUL
+198.txt: ALGORITHM USED => IDS
+Total nodes generated: 5380
+Total time taken: 0 minutes 0 seconds 9 milliseconds
+Path length: 8
+Path: RUULDRUL
+198.txt: ALGORITHM USED => A* h1
+Total nodes generated: 49
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: RUULDRUL
+198.txt: ALGORITHM USED => A* h2
+Total nodes generated: 25
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: RUULDRUL
+198.txt: ALGORITHM USED => A* h3
+Total nodes generated: 30
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: RUULDRUL
+
+
+239.txt: ALGORITHM USED => BFS
+Total nodes generated: 256
+Total time taken: 0 minutes 0 seconds 6 milliseconds
+Path length: 8
+Path: LLDDRULU
+239.txt: ALGORITHM USED => IDS
+Total nodes generated: 6649
+Total time taken: 0 minutes 0 seconds 11 milliseconds
+Path length: 8
+Path: LLDDRULU
+239.txt: ALGORITHM USED => A* h1
+Total nodes generated: 33
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: LLDDRULU
+239.txt: ALGORITHM USED => A* h2
+Total nodes generated: 30
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: LLDDRULU
+239.txt: ALGORITHM USED => A* h3
+Total nodes generated: 30
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: LLDDRULU
+
+
+234.txt: ALGORITHM USED => BFS
+Total nodes generated: 204
+Total time taken: 0 minutes 0 seconds 4 milliseconds
+Path length: 8
+Path: ULLDRULU
+234.txt: ALGORITHM USED => IDS
+Total nodes generated: 4601
+Total time taken: 0 minutes 0 seconds 7 milliseconds
+Path length: 8
+Path: ULLDRULU
+234.txt: ALGORITHM USED => A* h1
+Total nodes generated: 33
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: ULLDRULU
+234.txt: ALGORITHM USED => A* h2
+Total nodes generated: 25
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: ULLDRULU
+234.txt: ALGORITHM USED => A* h3
+Total nodes generated: 27
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: ULLDRULU
+
+
+208.txt: ALGORITHM USED => BFS
+Total nodes generated: 239
+Total time taken: 0 minutes 0 seconds 5 milliseconds
+Path length: 8
+Path: LULDRUUL
+208.txt: ALGORITHM USED => IDS
+Total nodes generated: 5764
+Total time taken: 0 minutes 0 seconds 10 milliseconds
+Path length: 8
+Path: LULDRUUL
+208.txt: ALGORITHM USED => A* h1
+Total nodes generated: 32
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: LULDRUUL
+208.txt: ALGORITHM USED => A* h2
+Total nodes generated: 25
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: LULDRUUL
+208.txt: ALGORITHM USED => A* h3
+Total nodes generated: 30
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: LULDRUUL
+
+
+195.txt: ALGORITHM USED => BFS
+Total nodes generated: 197
+Total time taken: 0 minutes 0 seconds 4 milliseconds
+Path length: 8
+Path: ULULDRUL
+195.txt: ALGORITHM USED => IDS
+Total nodes generated: 4210
+Total time taken: 0 minutes 0 seconds 8 milliseconds
+Path length: 8
+Path: ULULDRUL
+195.txt: ALGORITHM USED => A* h1
+Total nodes generated: 40
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: ULULDRUL
+195.txt: ALGORITHM USED => A* h2
+Total nodes generated: 25
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: ULULDRUL
+195.txt: ALGORITHM USED => A* h3
+Total nodes generated: 30
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: ULULDRUL
+
+
+154.txt: ALGORITHM USED => BFS
+Total nodes generated: 268
+Total time taken: 0 minutes 0 seconds 6 milliseconds
+Path length: 8
+Path: LLDRRULL
+154.txt: ALGORITHM USED => IDS
+Total nodes generated: 6833
+Total time taken: 0 minutes 0 seconds 11 milliseconds
+Path length: 8
+Path: LLDRRULL
+154.txt: ALGORITHM USED => A* h1
+Total nodes generated: 46
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: LLDRRULL
+154.txt: ALGORITHM USED => A* h2
+Total nodes generated: 23
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: LLDRRULL
+154.txt: ALGORITHM USED => A* h3
+Total nodes generated: 23
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: LLDRRULL
+
+
+236.txt: ALGORITHM USED => BFS
+Total nodes generated: 242
+Total time taken: 0 minutes 0 seconds 5 milliseconds
+Path length: 8
+Path: LULDRULU
+236.txt: ALGORITHM USED => IDS
+Total nodes generated: 5771
+Total time taken: 0 minutes 0 seconds 10 milliseconds
+Path length: 8
+Path: LULDRULU
+236.txt: ALGORITHM USED => A* h1
+Total nodes generated: 37
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: LULDRULU
+236.txt: ALGORITHM USED => A* h2
+Total nodes generated: 25
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: LULDRULU
+236.txt: ALGORITHM USED => A* h3
+Total nodes generated: 34
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: LULDRULU
+
+
+193.txt: ALGORITHM USED => BFS
+Total nodes generated: 303
+Total time taken: 0 minutes 0 seconds 9 milliseconds
+Path length: 8
+Path: RULLDRUL
+193.txt: ALGORITHM USED => IDS
+Total nodes generated: 10803
+Total time taken: 0 minutes 0 seconds 18 milliseconds
+Path length: 8
+Path: RULLDRUL
+193.txt: ALGORITHM USED => A* h1
+Total nodes generated: 51
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: RULLDRUL
+193.txt: ALGORITHM USED => A* h2
+Total nodes generated: 25
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: RULLDRUL
+193.txt: ALGORITHM USED => A* h3
+Total nodes generated: 28
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: RULLDRUL
+
+
+225.txt: ALGORITHM USED => BFS
+Total nodes generated: 193
+Total time taken: 0 minutes 0 seconds 4 milliseconds
+Path length: 8
+Path: DRURDLLU
+225.txt: ALGORITHM USED => IDS
+Total nodes generated: 4144
+Total time taken: 0 minutes 0 seconds 7 milliseconds
+Path length: 8
+Path: DRURDLLU
+225.txt: ALGORITHM USED => A* h1
+Total nodes generated: 67
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: DRURDLLU
+225.txt: ALGORITHM USED => A* h2
+Total nodes generated: 45
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: DRURDLLU
+225.txt: ALGORITHM USED => A* h3
+Total nodes generated: 45
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: DRURDLLU
+
+
+152.txt: ALGORITHM USED => BFS
+Total nodes generated: 268
+Total time taken: 0 minutes 0 seconds 7 milliseconds
+Path length: 8
+Path: LLURRULL
+152.txt: ALGORITHM USED => IDS
+Total nodes generated: 6833
+Total time taken: 0 minutes 0 seconds 11 milliseconds
+Path length: 8
+Path: LLURRULL
+152.txt: ALGORITHM USED => A* h1
+Total nodes generated: 23
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: LLURRULL
+152.txt: ALGORITHM USED => A* h2
+Total nodes generated: 23
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: LLURRULL
+152.txt: ALGORITHM USED => A* h3
+Total nodes generated: 23
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: LLURRULL
+
+
+224.txt: ALGORITHM USED => BFS
+Total nodes generated: 193
+Total time taken: 0 minutes 0 seconds 4 milliseconds
+Path length: 8
+Path: URURDLLU
+224.txt: ALGORITHM USED => IDS
+Total nodes generated: 4144
+Total time taken: 0 minutes 0 seconds 6 milliseconds
+Path length: 8
+Path: URURDLLU
+224.txt: ALGORITHM USED => A* h1
+Total nodes generated: 51
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: URURDLLU
+224.txt: ALGORITHM USED => A* h2
+Total nodes generated: 30
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: URURDLLU
+224.txt: ALGORITHM USED => A* h3
+Total nodes generated: 38
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: URURDLLU
+
+
+256.txt: ALGORITHM USED => BFS
+Total nodes generated: 257
+Total time taken: 0 minutes 0 seconds 6 milliseconds
+Path length: 8
+Path: RRDDLLUU
+256.txt: ALGORITHM USED => IDS
+Total nodes generated: 6078
+Total time taken: 0 minutes 0 seconds 10 milliseconds
+Path length: 8
+Path: RRDDLLUU
+256.txt: ALGORITHM USED => A* h1
+Total nodes generated: 24
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: RRDDLLUU
+256.txt: ALGORITHM USED => A* h2
+Total nodes generated: 21
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: RRDDLLUU
+256.txt: ALGORITHM USED => A* h3
+Total nodes generated: 21
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: RRDDLLUU
+
+
+250.txt: ALGORITHM USED => BFS
+Total nodes generated: 205
+Total time taken: 0 minutes 0 seconds 4 milliseconds
+Path length: 8
+Path: URRDLLUU
+250.txt: ALGORITHM USED => IDS
+Total nodes generated: 4323
+Total time taken: 0 minutes 0 seconds 7 milliseconds
+Path length: 8
+Path: URRDLLUU
+250.txt: ALGORITHM USED => A* h1
+Total nodes generated: 30
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: URRDLLUU
+250.txt: ALGORITHM USED => A* h2
+Total nodes generated: 23
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: URRDLLUU
+250.txt: ALGORITHM USED => A* h3
+Total nodes generated: 25
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: URRDLLUU
+
+
+253.txt: ALGORITHM USED => BFS
+Total nodes generated: 234
+Total time taken: 0 minutes 0 seconds 5 milliseconds
+Path length: 8
+Path: RURDLLUU
+253.txt: ALGORITHM USED => IDS
+Total nodes generated: 5493
+Total time taken: 0 minutes 0 seconds 9 milliseconds
+Path length: 8
+Path: RURDLLUU
+253.txt: ALGORITHM USED => A* h1
+Total nodes generated: 48
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: RURDLLUU
+253.txt: ALGORITHM USED => A* h2
+Total nodes generated: 28
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: RURDLLUU
+253.txt: ALGORITHM USED => A* h3
+Total nodes generated: 40
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 8
+Path: RURDLLUU
+
+
+5120.txt: ALGORITHM USED => BFS
+Total nodes generated: 7027
+Total time taken: 0 minutes 3 seconds 546 milliseconds
+Path length: 15
+Path: RDRUULDLDRRUULL
+5120.txt: ALGORITHM USED => IDS
+Total nodes generated: 10592193
+Total time taken: 0 minutes 18 seconds 322 milliseconds
+Path length: 15
+Path: RDRUULDLDRRUULL
+5120.txt: ALGORITHM USED => A* h1
+Total nodes generated: 599
+Total time taken: 0 minutes 0 seconds 7 milliseconds
+Path length: 15
+Path: RDRUULDLDRRUULL
+5120.txt: ALGORITHM USED => A* h2
+Total nodes generated: 60
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 15
+Path: RDRUULDLDRRUULL
+5120.txt: ALGORITHM USED => A* h3
+Total nodes generated: 106
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 15
+Path: RDRUULDLDRRUULL
+
+
+5108.txt: ALGORITHM USED => BFS
+Total nodes generated: 6343
+Total time taken: 0 minutes 3 seconds 37 milliseconds
+Path length: 15
+Path: URDRDLULDRRUULL
+5108.txt: ALGORITHM USED => IDS
+Total nodes generated: 9056778
+Total time taken: 0 minutes 15 seconds 238 milliseconds
+Path length: 15
+Path: URDRDLULDRRUULL
+5108.txt: ALGORITHM USED => A* h1
+Total nodes generated: 1058
+Total time taken: 0 minutes 0 seconds 18 milliseconds
+Path length: 15
+Path: URDRDLULDRRUULL
+5108.txt: ALGORITHM USED => A* h2
+Total nodes generated: 320
+Total time taken: 0 minutes 0 seconds 3 milliseconds
+Path length: 15
+Path: URDRDLULDRRUULL
+5108.txt: ALGORITHM USED => A* h3
+Total nodes generated: 408
+Total time taken: 0 minutes 0 seconds 4 milliseconds
+Path length: 15
+Path: URDRDLULDRRUULL
+
+
+4798.txt: ALGORITHM USED => BFS
+Total nodes generated: 6530
+Total time taken: 0 minutes 3 seconds 170 milliseconds
+Path length: 15
+Path: ULDRRUULDDLURUL
+4798.txt: ALGORITHM USED => IDS
+Total nodes generated: 8962945
+Total time taken: 0 minutes 15 seconds 143 milliseconds
+Path length: 15
+Path: ULDRRUULDDLURUL
+4798.txt: ALGORITHM USED => A* h1
+Total nodes generated: 914
+Total time taken: 0 minutes 0 seconds 14 milliseconds
+Path length: 15
+Path: ULDRRUULDDLURUL
+4798.txt: ALGORITHM USED => A* h2
+Total nodes generated: 273
+Total time taken: 0 minutes 0 seconds 2 milliseconds
+Path length: 15
+Path: ULDRRUULDDLURUL
+4798.txt: ALGORITHM USED => A* h3
+Total nodes generated: 432
+Total time taken: 0 minutes 0 seconds 5 milliseconds
+Path length: 15
+Path: ULDRRUULDDLURUL
+
+
+4773.txt: ALGORITHM USED => BFS
+Total nodes generated: 7905
+Total time taken: 0 minutes 4 seconds 345 milliseconds
+Path length: 15
+Path: RULDRRDLLURRULL
+4773.txt: ALGORITHM USED => IDS
+Total nodes generated: 12143186
+Total time taken: 0 minutes 20 seconds 283 milliseconds
+Path length: 15
+Path: RULDRRDLLURRULL
+4773.txt: ALGORITHM USED => A* h1
+Total nodes generated: 628
+Total time taken: 0 minutes 0 seconds 7 milliseconds
+Path length: 15
+Path: RULDRRDLLURRULL
+4773.txt: ALGORITHM USED => A* h2
+Total nodes generated: 59
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 15
+Path: RULDRRDLLURRULL
+4773.txt: ALGORITHM USED => A* h3
+Total nodes generated: 104
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 15
+Path: RULDRRDLLURRULL
+
+
+4767.txt: ALGORITHM USED => BFS
+Total nodes generated: 6048
+Total time taken: 0 minutes 2 seconds 825 milliseconds
+Path length: 15
+Path: DLLURRDLLURRULL
+4767.txt: ALGORITHM USED => IDS
+Total nodes generated: 7349696
+Total time taken: 0 minutes 12 seconds 431 milliseconds
+Path length: 15
+Path: DLLURRDLLURRULL
+4767.txt: ALGORITHM USED => A* h1
+Total nodes generated: 677
+Total time taken: 0 minutes 0 seconds 8 milliseconds
+Path length: 15
+Path: DLLURRDLLURRULL
+4767.txt: ALGORITHM USED => A* h2
+Total nodes generated: 50
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 15
+Path: DLLURRDLLURRULL
+4767.txt: ALGORITHM USED => A* h3
+Total nodes generated: 161
+Total time taken: 0 minutes 0 seconds 1 milliseconds
+Path length: 15
+Path: DLLURRDLLURRULL
+
+
+5109.txt: ALGORITHM USED => BFS
+Total nodes generated: 6536
+Total time taken: 0 minutes 3 seconds 187 milliseconds
+Path length: 15
+Path: URDLDRUULDRDLUU
+5109.txt: ALGORITHM USED => IDS
+Total nodes generated: 9203369
+Total time taken: 0 minutes 15 seconds 597 milliseconds
+Path length: 15
+Path: URDLDRUULDRDLUU
+5109.txt: ALGORITHM USED => A* h1
+Total nodes generated: 1124
+Total time taken: 0 minutes 0 seconds 21 milliseconds
+Path length: 15
+Path: URDLDRUULDRDLUU
+5109.txt: ALGORITHM USED => A* h2
+Total nodes generated: 430
+Total time taken: 0 minutes 0 seconds 4 milliseconds
+Path length: 15
+Path: URDLDRUULDRDLUU
+5109.txt: ALGORITHM USED => A* h3
+Total nodes generated: 592
+Total time taken: 0 minutes 0 seconds 8 milliseconds
+Path length: 15
+Path: URDLDRUULDRDLUU
+
+
+5123.txt: ALGORITHM USED => BFS
+Total nodes generated: 7640
+Total time taken: 0 minutes 4 seconds 150 milliseconds
+Path length: 15
+Path: RDLLURDLDRRUULL
+5123.txt: ALGORITHM USED => IDS
+Total nodes generated: 11041581
+Total time taken: 0 minutes 18 seconds 546 milliseconds
+Path length: 15
+Path: RDLLURDLDRRUULL
+5123.txt: ALGORITHM USED => A* h1
+Total nodes generated: 879
+Total time taken: 0 minutes 0 seconds 13 milliseconds
+Path length: 15
+Path: RDLLURDLDRRUULL
+5123.txt: ALGORITHM USED => A* h2
+Total nodes generated: 214
+Total time taken: 0 minutes 0 seconds 1 milliseconds
+Path length: 15
+Path: RDLLURDLDRRUULL
+5123.txt: ALGORITHM USED => A* h3
+Total nodes generated: 307
+Total time taken: 0 minutes 0 seconds 3 milliseconds
+Path length: 15
+Path: RDLLURDLDRRUULL
+
+
+4771.txt: ALGORITHM USED => BFS
+Total nodes generated: 6924
+Total time taken: 0 minutes 3 seconds 511 milliseconds
+Path length: 15
+Path: ULLDRRDLLURRULL
+4771.txt: ALGORITHM USED => IDS
+Total nodes generated: 9746441
+Total time taken: 0 minutes 16 seconds 391 milliseconds
+Path length: 15
+Path: ULLDRRDLLURRULL
+4771.txt: ALGORITHM USED => A* h1
+Total nodes generated: 641
+Total time taken: 0 minutes 0 seconds 8 milliseconds
+Path length: 15
+Path: ULLDRRDLLURRULL
+4771.txt: ALGORITHM USED => A* h2
+Total nodes generated: 80
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 15
+Path: ULLDRRDLLURRULL
+4771.txt: ALGORITHM USED => A* h3
+Total nodes generated: 113
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 15
+Path: ULLDRRDLLURRULL
+
+
+5126.txt: ALGORITHM USED => BFS
+Total nodes generated: 6622
+Total time taken: 0 minutes 3 seconds 298 milliseconds
+Path length: 15
+Path: ULDLURDLDRRUULL
+5126.txt: ALGORITHM USED => IDS
+Total nodes generated: 9244023
+Total time taken: 0 minutes 15 seconds 556 milliseconds
+Path length: 15
+Path: ULDLURDLDRRUULL
+5126.txt: ALGORITHM USED => A* h1
+Total nodes generated: 751
+Total time taken: 0 minutes 0 seconds 10 milliseconds
+Path length: 15
+Path: ULLDRULDDRRUULL
+5126.txt: ALGORITHM USED => A* h2
+Total nodes generated: 133
+Total time taken: 0 minutes 0 seconds 1 milliseconds
+Path length: 15
+Path: ULLDRULDDRRUULL
+5126.txt: ALGORITHM USED => A* h3
+Total nodes generated: 211
+Total time taken: 0 minutes 0 seconds 1 milliseconds
+Path length: 15
+Path: ULLDRULDDRRUULL
+
+
+4775.txt: ALGORITHM USED => BFS
+Total nodes generated: 7008
+Total time taken: 0 minutes 3 seconds 505 milliseconds
+Path length: 15
+Path: RDDLURDLLURRULL
+4775.txt: ALGORITHM USED => IDS
+Total nodes generated: 10120933
+Total time taken: 0 minutes 17 seconds 203 milliseconds
+Path length: 15
+Path: RDDLURDLLURRULL
+4775.txt: ALGORITHM USED => A* h1
+Total nodes generated: 797
+Total time taken: 0 minutes 0 seconds 11 milliseconds
+Path length: 15
+Path: RDLDRUULDDLURUL
+4775.txt: ALGORITHM USED => A* h2
+Total nodes generated: 113
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 15
+Path: RDLDRUULDDLURUL
+4775.txt: ALGORITHM USED => A* h3
+Total nodes generated: 312
+Total time taken: 0 minutes 0 seconds 3 milliseconds
+Path length: 15
+Path: RDLDRUULDDLURUL
+
+
+5127.txt: ALGORITHM USED => BFS
+Total nodes generated: 5847
+Total time taken: 0 minutes 2 seconds 676 milliseconds
+Path length: 15
+Path: DLLUURDLDRRUULL
+5127.txt: ALGORITHM USED => IDS
+Total nodes generated: 7296668
+Total time taken: 0 minutes 12 seconds 158 milliseconds
+Path length: 15
+Path: DLLUURDLDRRUULL
+5127.txt: ALGORITHM USED => A* h1
+Total nodes generated: 1240
+Total time taken: 0 minutes 0 seconds 25 milliseconds
+Path length: 15
+Path: DLLUURDLDRRUULL
+5127.txt: ALGORITHM USED => A* h2
+Total nodes generated: 542
+Total time taken: 0 minutes 0 seconds 7 milliseconds
+Path length: 15
+Path: DLLUURDLDRRUULL
+5127.txt: ALGORITHM USED => A* h3
+Total nodes generated: 620
+Total time taken: 0 minutes 0 seconds 9 milliseconds
+Path length: 15
+Path: DLLUURDLDRRUULL
+
+
+4789.txt: ALGORITHM USED => BFS
+Total nodes generated: 6843
+Total time taken: 0 minutes 3 seconds 420 milliseconds
+Path length: 15
+Path: ULURRDDLLURRULL
+4789.txt: ALGORITHM USED => IDS
+Total nodes generated: 9259602
+Total time taken: 0 minutes 15 seconds 849 milliseconds
+Path length: 15
+Path: ULURRDDLLURRULL
+4789.txt: ALGORITHM USED => A* h1
+Total nodes generated: 826
+Total time taken: 0 minutes 0 seconds 12 milliseconds
+Path length: 15
+Path: ULURRDDLLURRULL
+4789.txt: ALGORITHM USED => A* h2
+Total nodes generated: 349
+Total time taken: 0 minutes 0 seconds 3 milliseconds
+Path length: 15
+Path: ULURRDDLLURRULL
+4789.txt: ALGORITHM USED => A* h3
+Total nodes generated: 392
+Total time taken: 0 minutes 0 seconds 4 milliseconds
+Path length: 15
+Path: ULURRDDLLURRULL
+
+
+5130.txt: ALGORITHM USED => BFS
+Total nodes generated: 5545
+Total time taken: 0 minutes 2 seconds 444 milliseconds
+Path length: 15
+Path: DDLUURDLDRRUULL
+5130.txt: ALGORITHM USED => IDS
+Total nodes generated: 6098296
+Total time taken: 0 minutes 10 seconds 534 milliseconds
+Path length: 15
+Path: DDLUURDLDRRUULL
+5130.txt: ALGORITHM USED => A* h1
+Total nodes generated: 1022
+Total time taken: 0 minutes 0 seconds 18 milliseconds
+Path length: 15
+Path: DDLUURDLDRRUULL
+5130.txt: ALGORITHM USED => A* h2
+Total nodes generated: 295
+Total time taken: 0 minutes 0 seconds 2 milliseconds
+Path length: 15
+Path: DDLUURDLDRRUULL
+5130.txt: ALGORITHM USED => A* h3
+Total nodes generated: 416
+Total time taken: 0 minutes 0 seconds 4 milliseconds
+Path length: 15
+Path: DDLUURDLDRRUULL
+
+
+4800.txt: ALGORITHM USED => BFS
+Total nodes generated: 7916
+Total time taken: 0 minutes 4 seconds 339 milliseconds
+Path length: 15
+Path: LDDRRUULDDLURUL
+4800.txt: ALGORITHM USED => IDS
+Total nodes generated: 12558063
+Total time taken: 0 minutes 21 seconds 106 milliseconds
+Path length: 15
+Path: LDDRRUULDDLURUL
+4800.txt: ALGORITHM USED => A* h1
+Total nodes generated: 785
+Total time taken: 0 minutes 0 seconds 11 milliseconds
+Path length: 15
+Path: LDDRRUULDDLURUL
+4800.txt: ALGORITHM USED => A* h2
+Total nodes generated: 116
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 15
+Path: LDDRRUULDDLURUL
+4800.txt: ALGORITHM USED => A* h3
+Total nodes generated: 299
+Total time taken: 0 minutes 0 seconds 3 milliseconds
+Path length: 15
+Path: LDDRRUULDDLURUL
+
+
+5115.txt: ALGORITHM USED => BFS
+Total nodes generated: 5487
+Total time taken: 0 minutes 2 seconds 365 milliseconds
+Path length: 15
+Path: DLURULDLDRRUULL
+5115.txt: ALGORITHM USED => IDS
+Total nodes generated: 6697482
+Total time taken: 0 minutes 11 seconds 328 milliseconds
+Path length: 15
+Path: DLURULDLDRRUULL
+5115.txt: ALGORITHM USED => A* h1
+Total nodes generated: 696
+Total time taken: 0 minutes 0 seconds 9 milliseconds
+Path length: 15
+Path: DLURULDLDRRUULL
+5115.txt: ALGORITHM USED => A* h2
+Total nodes generated: 97
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 15
+Path: DLURULDLDRRUULL
+5115.txt: ALGORITHM USED => A* h3
+Total nodes generated: 209
+Total time taken: 0 minutes 0 seconds 1 milliseconds
+Path length: 15
+Path: DLURULDLDRRUULL
+
+
+4784.txt: ALGORITHM USED => BFS
+Total nodes generated: 5687
+Total time taken: 0 minutes 2 seconds 530 milliseconds
+Path length: 15
+Path: DLULURDDLURRULL
+4784.txt: ALGORITHM USED => IDS
+Total nodes generated: 6841793
+Total time taken: 0 minutes 11 seconds 492 milliseconds
+Path length: 15
+Path: DLULURDDLURRULL
+4784.txt: ALGORITHM USED => A* h1
+Total nodes generated: 718
+Total time taken: 0 minutes 0 seconds 9 milliseconds
+Path length: 15
+Path: DLULURDDLURRULL
+4784.txt: ALGORITHM USED => A* h2
+Total nodes generated: 104
+Total time taken: 0 minutes 0 seconds 0 milliseconds
+Path length: 15
+Path: DLULURDDLURRULL
+4784.txt: ALGORITHM USED => A* h3
+Total nodes generated: 212
+Total time taken: 0 minutes 0 seconds 1 milliseconds
+Path length: 15
+Path: DLULURDDLURRULL
+
+
+4778.txt: ALGORITHM USED => BFS
+Total nodes generated: 6459
+Total time taken: 0 minutes 3 seconds 130 milliseconds
+Path length: 15
+Path: DLDRURDLLURRULL
+4778.txt: ALGORITHM USED => IDS
+Total nodes generated: 8922560
+Total time taken: 0 minutes 15 seconds 47 milliseconds
+Path length: 15
+Path: DLDRURDLLURRULL
+4778.txt: ALGORITHM USED => A* h1
+Total nodes generated: 761
+Total time taken: 0 minutes 0 seconds 10 milliseconds
+Path length: 15
+Path: DLDRURDLLURRULL
+4778.txt: ALGORITHM USED => A* h2
+Total nodes generated: 136
+Total time taken: 0 minutes 0 seconds 1 milliseconds
+Path length: 15
+Path: DLDRURDLLURRULL
+4778.txt: ALGORITHM USED => A* h3
+Total nodes generated: 240
+Total time taken: 0 minutes 0 seconds 2 milliseconds
+Path length: 15
+Path: DLDRURDLLURRULL
+
+
+4793.txt: ALGORITHM USED => BFS
+Total nodes generated: 8154
+Total time taken: 0 minutes 4 seconds 519 milliseconds
+Path length: 15
+Path: LURURDDLLURRULL
+4793.txt: ALGORITHM USED => IDS
+Total nodes generated: 13154313
+Total time taken: 0 minutes 22 seconds 48 milliseconds
+Path length: 15
+Path: LURURDDLLURRULL
+4793.txt: ALGORITHM USED => A* h1
+Total nodes generated: 805
+Total time taken: 0 minutes 0 seconds 11 milliseconds
+Path length: 15
+Path: LURURDDLLURRULL
+4793.txt: ALGORITHM USED => A* h2
+Total nodes generated: 238
+Total time taken: 0 minutes 0 seconds 2 milliseconds
+Path length: 15
+Path: LURURDDLLURRULL
+4793.txt: ALGORITHM USED => A* h3
+Total nodes generated: 329
+Total time taken: 0 minutes 0 seconds 3 milliseconds
+Path length: 15
+Path: LURURDDLLURRULL
+
+
+4768.txt: ALGORITHM USED => BFS
+Total nodes generated: 7466
+Total time taken: 0 minutes 4 seconds 243 milliseconds
+Path length: 15
+Path: LDLURRDLLURRULL
+4768.txt: ALGORITHM USED => IDS
+Total nodes generated: 10944814
+Total time taken: 0 minutes 18 seconds 592 milliseconds
+Path length: 15
+Path: LDLURRDLLURRULL
+4768.txt: ALGORITHM USED => A* h1
+Total nodes generated: 740
+Total time taken: 0 minutes 0 seconds 10 milliseconds
+Path length: 15
+Path: LDLURRDLLURRULL
+4768.txt: ALGORITHM USED => A* h2
+Total nodes generated: 166
+Total time taken: 0 minutes 0 seconds 1 milliseconds
+Path length: 15
+Path: LDLURRDLLURRULL
+4768.txt: ALGORITHM USED => A* h3
+Total nodes generated: 250
+Total time taken: 0 minutes 0 seconds 2 milliseconds
+Path length: 15
+Path: LDLURRDLLURRULL
+
+
+4780.txt: ALGORITHM USED => BFS
+Total nodes generated: 8307
+Total time taken: 0 minutes 4 seconds 674 milliseconds
+Path length: 15
+Path: RRULDRDLLURRULL
+4780.txt: ALGORITHM USED => IDS
+Total nodes generated: 12817271
+Total time taken: 0 minutes 21 seconds 472 milliseconds
+Path length: 15
+Path: RRULDRDLLURRULL
+4780.txt: ALGORITHM USED => A* h1
+Total nodes generated: 731
+Total time taken: 0 minutes 0 seconds 10 milliseconds
+Path length: 15
+Path: RRULDRDLLURRULL
+4780.txt: ALGORITHM USED => A* h2
+Total nodes generated: 137
+Total time taken: 0 minutes 0 seconds 1 milliseconds
+Path length: 15
+Path: RRULDRDLLURRULL
+4780.txt: ALGORITHM USED => A* h3
+Total nodes generated: 206
+Total time taken: 0 minutes 0 seconds 1 milliseconds
+Path length: 15
+Path: RRULDRDLLURRULL
+
+
+131449.txt: ALGORITHM USED => BFS
+Total nodes generated: 122867
+Total time taken: 7 minutes 7 seconds 458 milliseconds
+Path length: 24
+Path: DDRRULLDRRULDLURULDDRUUL
+131449.txt: ALGORITHM USED => IDS
+Total nodes generated: 235565786
+Total time taken >15 min
+Path length: Timed out.
+Path: Timed out.
+131449.txt: ALGORITHM USED => A* h1
+Total nodes generated: 42508
+Total time taken: 0 minutes 22 seconds 902 milliseconds
+Path length: 24
+Path: DDRRULLDRRULDLURULDDRUUL
+131449.txt: ALGORITHM USED => A* h2
+Total nodes generated: 2254
+Total time taken: 0 minutes 0 seconds 83 milliseconds
+Path length: 24
+Path: DDRRULLDRRULDLURULDDRUUL
+131449.txt: ALGORITHM USED => A* h3
+Total nodes generated: 7758
+Total time taken: 0 minutes 0 seconds 873 milliseconds
+Path length: 24
+Path: DDRRULLDRRULDLURULDDRUUL
+
+
+131271.txt: ALGORITHM USED => BFS
+Total nodes generated: 131973
+Total time taken: 7 minutes 47 seconds 617 milliseconds
+Path length: 24
+Path: DLUURDDRULLURRDLULDDRULU
+131271.txt: ALGORITHM USED => IDS
+Total nodes generated: 471131572
+Total time taken >15 min
+Path length: Timed out.
+Path: Timed out.
+131271.txt: ALGORITHM USED => A* h1
+Total nodes generated: 48224
+Total time taken: 0 minutes 17 seconds 660 milliseconds
+Path length: 24
+Path: DLURULDRDRULURDLULDDRULU
+131271.txt: ALGORITHM USED => A* h2
+Total nodes generated: 1309
+Total time taken: 0 minutes 0 seconds 19 milliseconds
+Path length: 24
+Path: DLUURDDRULLURRDLULDDRULU
+131271.txt: ALGORITHM USED => A* h3
+Total nodes generated: 6315
+Total time taken: 0 minutes 0 seconds 348 milliseconds
+Path length: 24
+Path: DLURULDRDRUULDRULLDDRULU
+
+
+131311.txt: ALGORITHM USED => BFS
+Total nodes generated: 137638
+Total time taken: 4 minutes 54 seconds 986 milliseconds
+Path length: 24
+Path: URDLDRULLDRUULDRURDLDLUU
+131311.txt: ALGORITHM USED => IDS
+Total nodes generated: 471131572
+Total time taken >15 min
+Path length: Timed out.
+Path: Timed out.
+131311.txt: ALGORITHM USED => A* h1
+Total nodes generated: 49329
+Total time taken: 0 minutes 18 seconds 528 milliseconds
+Path length: 24
+Path: RULLDRDRUULDDRUULLDDRUUL
+131311.txt: ALGORITHM USED => A* h2
+Total nodes generated: 2032
+Total time taken: 0 minutes 0 seconds 41 milliseconds
+Path length: 24
+Path: URDLDRULLDRUULDRURDLDLUU
+131311.txt: ALGORITHM USED => A* h3
+Total nodes generated: 8075
+Total time taken: 0 minutes 0 seconds 548 milliseconds
+Path length: 24
+Path: RULLDRDRUULDDRUULLDDRUUL
+
+
+131304.txt: ALGORITHM USED => BFS
+Total nodes generated: 130429
+Total time taken: 4 minutes 45 seconds 536 milliseconds
+Path length: 24
+Path: URRDLLURRULDDRUULLDDRUUL
+131304.txt: ALGORITHM USED => IDS
+Total nodes generated: 657392930
+Total time taken >15 min
+Path length: Timed out.
+Path: Timed out.
+131304.txt: ALGORITHM USED => A* h1
+Total nodes generated: 43378
+Total time taken: 0 minutes 18 seconds 21 milliseconds
+Path length: 24
+Path: RRUULDRDLULURRDDLUURDLLU
+131304.txt: ALGORITHM USED => A* h2
+Total nodes generated: 4061
+Total time taken: 0 minutes 0 seconds 147 milliseconds
+Path length: 24
+Path: URRDLLURRULDDRUULLDDRUUL
+131304.txt: ALGORITHM USED => A* h3
+Total nodes generated: 9704
+Total time taken: 0 minutes 0 seconds 772 milliseconds
+Path length: 24
+Path: RRUULDRDLULURRDDLUURDLLU
+
+
+131264.txt: ALGORITHM USED => BFS
+Total nodes generated: 69213
+Total time taken >15 min
+Path length: Timed out.
+Path: Timed out.
+131264.txt: ALGORITHM USED => IDS
+Total nodes generated: 82174098
+Total time taken >15 min
+Path length: Timed out.
+Path: Timed out.
+131264.txt: ALGORITHM USED => A* h1
+Total nodes generated: 39249
+Total time taken: 0 minutes 11 seconds 651 milliseconds
+Path length: 24
+Path: RRUULDRULLDDRURULLDDRUUL
+131264.txt: ALGORITHM USED => A* h2
+Total nodes generated: 1091
+Total time taken: 0 minutes 0 seconds 13 milliseconds
+Path length: 24
+Path: RRULURDLULDDRURULLDDRUUL
+131264.txt: ALGORITHM USED => A* h3
+Total nodes generated: 4514
+Total time taken: 0 minutes 0 seconds 192 milliseconds
+Path length: 24
+Path: RRULURDLULDDRURULLDDRUUL
+
+
+131274.txt: ALGORITHM USED => BFS
+Total nodes generated: 92751
+Total time taken >15 min
+Path length: Timed out.
+Path: Timed out.
+131274.txt: ALGORITHM USED => IDS
+Total nodes generated: 10271746
+Total time taken >15 min
+Path length: Timed out.
+Path: Timed out.
+131274.txt: ALGORITHM USED => A* h1
+Total nodes generated: 37959
+Total time taken: 0 minutes 10 seconds 912 milliseconds
+Path length: 24
+Path: RRUULLDDRRULURDLULDDRUUL
+131274.txt: ALGORITHM USED => A* h2
+Total nodes generated: 963
+Total time taken: 0 minutes 0 seconds 12 milliseconds
+Path length: 24
+Path: RRUULLDDRRUULDRULLDDRUUL
+131274.txt: ALGORITHM USED => A* h3
+Total nodes generated: 3685
+Total time taken: 0 minutes 0 seconds 127 milliseconds
+Path length: 24
+Path: RRUULLDDRRUULDRULLDDRUUL
+
+
+131248.txt: ALGORITHM USED => BFS
+Total nodes generated: 82012
+Total time taken >15 min
+Path length: Timed out.
+Path: Timed out.
+131248.txt: ALGORITHM USED => IDS
+Total nodes generated: 657392930
+Total time taken >15 min
+Path length: Timed out.
+Path: Timed out.
+131248.txt: ALGORITHM USED => A* h1
+Total nodes generated: 41050
+Total time taken: 0 minutes 12 seconds 394 milliseconds
+Path length: 24
+Path: RULDRRUULDRDLURULLDDRULU
+131248.txt: ALGORITHM USED => A* h2
+Total nodes generated: 2932
+Total time taken: 0 minutes 0 seconds 81 milliseconds
+Path length: 24
+Path: RULDRRUULDRDLURULLDDRULU
+131248.txt: ALGORITHM USED => A* h3
+Total nodes generated: 8862
+Total time taken: 0 minutes 0 seconds 655 milliseconds
+Path length: 24
+Path: RULDRRUULDRDLURULLDDRULU
+
+
+131370.txt: ALGORITHM USED => BFS
+Total nodes generated: 139860
+Total time taken: 4 minutes 55 seconds 286 milliseconds
+Path length: 24
+Path: ULDDRURDLULURRDLULDDRUUL
+131370.txt: ALGORITHM USED => IDS
+Total nodes generated: 471131572
+Total time taken >15 min
+Path length: Timed out.
+Path: Timed out.
+131370.txt: ALGORITHM USED => A* h1
+Total nodes generated: 48420
+Total time taken: 0 minutes 17 seconds 816 milliseconds
+Path length: 24
+Path: ULDDRURDLULURRDLULDDRUUL
+131370.txt: ALGORITHM USED => A* h2
+Total nodes generated: 1042
+Total time taken: 0 minutes 0 seconds 13 milliseconds
+Path length: 24
+Path: ULDDRURDLULURRDLULDDRUUL
+131370.txt: ALGORITHM USED => A* h3
+Total nodes generated: 6084
+Total time taken: 0 minutes 0 seconds 331 milliseconds
+Path length: 24
+Path: ULDDRURDLULURRDLULDDRUUL
+
+
+131400.txt: ALGORITHM USED => BFS
+Total nodes generated: 50124
+Total time taken >15 min
+Path length: Timed out.
+Path: Timed out.
+131400.txt: ALGORITHM USED => IDS
+Total nodes generated: 29445706
+Total time taken >15 min
+Path length: Timed out.
+Path: Timed out.
+131400.txt: ALGORITHM USED => A* h1
+Total nodes generated: 28728
+Total time taken >15 min
+Path length: Timed out.
+Path: Timed out.
+131400.txt: ALGORITHM USED => A* h2
+Total nodes generated: 2466
+Total time taken: 0 minutes 0 seconds 82 milliseconds
+Path length: 24
+Path: ULULDDRUULDRURDLULDDRUUL
+131400.txt: ALGORITHM USED => A* h3
+Total nodes generated: 8089
+Total time taken: 0 minutes 0 seconds 712 milliseconds
+Path length: 24
+Path: ULULDDRUULDRURDLULDDRUUL
+
+
+131374.txt: ALGORITHM USED => BFS
+Total nodes generated: 112929
+Total time taken >15 min
+Path length: Timed out.
+Path: Timed out.
+131374.txt: ALGORITHM USED => IDS
+Total nodes generated: 82174098
+Total time taken >15 min
+Path length: Timed out.
+Path: Timed out.
+131374.txt: ALGORITHM USED => A* h1
+Total nodes generated: 40443
+Total time taken: 0 minutes 12 seconds 609 milliseconds
+Path length: 24
+Path: RRULULDDRULURRDLULDDRUUL
+131374.txt: ALGORITHM USED => A* h2
+Total nodes generated: 1050
+Total time taken: 0 minutes 0 seconds 12 milliseconds
+Path length: 24
+Path: RRULULDDRULURRDLULDDRUUL
+131374.txt: ALGORITHM USED => A* h3
+Total nodes generated: 5114
+Total time taken: 0 minutes 0 seconds 229 milliseconds
+Path length: 24
+Path: RRULULDDRULURRDLULDDRUUL
+
+
+131406.txt: ALGORITHM USED => BFS
+Total nodes generated: 18064
+Total time taken >15 min
+Path length: Timed out.
+Path: Timed out.
+131406.txt: ALGORITHM USED => IDS
+Total nodes generated: 657392930
+Total time taken >15 min
+Path length: Timed out.
+Path: Timed out.
+131406.txt: ALGORITHM USED => A* h1
+Total nodes generated: 40060
+Total time taken: 0 minutes 12 seconds 33 milliseconds
+Path length: 24
+Path: UULDDLURRDLUURDLULDDRUUL
+131406.txt: ALGORITHM USED => A* h2
+Total nodes generated: 2951
+Total time taken: 0 minutes 0 seconds 84 milliseconds
+Path length: 24
+Path: UULDDLURRDLUURDLULDDRUUL
+131406.txt: ALGORITHM USED => A* h3
+Total nodes generated: 6405
+Total time taken: 0 minutes 0 seconds 361 milliseconds
+Path length: 24
+Path: UULDDLURRDLUURDLULDDRUUL
+
+
+131378.txt: ALGORITHM USED => BFS
+Total nodes generated: 117564
+Total time taken: 4 minutes 15 seconds 533 milliseconds
+Path length: 24
+Path: DDRUULDDRULURRDLULDDRUUL
+131378.txt: ALGORITHM USED => IDS
+Total nodes generated: 657392930
+Total time taken >15 min
+Path length: Timed out.
+Path: Timed out.
+131378.txt: ALGORITHM USED => A* h1
+Total nodes generated: 43761
+Total time taken: 0 minutes 14 seconds 378 milliseconds
+Path length: 24
+Path: DDRUULDDRULURRDLULDDRUUL
+131378.txt: ALGORITHM USED => A* h2
+Total nodes generated: 3152
+Total time taken: 0 minutes 0 seconds 95 milliseconds
+Path length: 24
+Path: DDRUULDDRULURRDLULDDRUUL
+131378.txt: ALGORITHM USED => A* h3
+Total nodes generated: 9172
+Total time taken: 0 minutes 0 seconds 722 milliseconds
+Path length: 24
+Path: DDRUULDDRULURRDLULDDRUUL
+
+
+131345.txt: ALGORITHM USED => BFS
+Total nodes generated: 116537
+Total time taken: 4 minutes 14 seconds 717 milliseconds
+Path length: 24
+Path: UULDDRUULLDDRRULULDDRUUL
+131345.txt: ALGORITHM USED => IDS
+Total nodes generated: 235565786
+Total time taken >15 min
+Path length: Timed out.
+Path: Timed out.
+131345.txt: ALGORITHM USED => A* h1
+Total nodes generated: 37657
+Total time taken: 0 minutes 10 seconds 764 milliseconds
+Path length: 24
+Path: UULDDRUULLDDRRULULDDRUUL
+131345.txt: ALGORITHM USED => A* h2
+Total nodes generated: 379
+Total time taken: 0 minutes 0 seconds 2 milliseconds
+Path length: 24
+Path: ULURDLDRULULDDRUULDDRUUL
+131345.txt: ALGORITHM USED => A* h3
+Total nodes generated: 3345
+Total time taken: 0 minutes 0 seconds 102 milliseconds
+Path length: 24
+Path: ULURDLDRULULDDRUULDDRUUL
+
+
+131425.txt: ALGORITHM USED => BFS
+Total nodes generated: 137778
+Total time taken: 4 minutes 51 seconds 931 milliseconds
+Path length: 24
+Path: LLDDRUURDDLUURDLULDDRUUL
+131425.txt: ALGORITHM USED => IDS
+Total nodes generated: 235565786
+Total time taken >15 min
+Path length: Timed out.
+Path: Timed out.
+131425.txt: ALGORITHM USED => A* h1
+Total nodes generated: 40921
+Total time taken: 0 minutes 12 seconds 677 milliseconds
+Path length: 24
+Path: LLDDRUURDDLUURDLULDDRUUL
+131425.txt: ALGORITHM USED => A* h2
+Total nodes generated: 3088
+Total time taken: 0 minutes 0 seconds 87 milliseconds
+Path length: 24
+Path: LLDDRUURDDLUURDLULDDRUUL
+131425.txt: ALGORITHM USED => A* h3
+Total nodes generated: 6362
+Total time taken: 0 minutes 0 seconds 347 milliseconds
+Path length: 24
+Path: LLDDRUURDDLUURDLULDDRUUL
+
+
+131394.txt: ALGORITHM USED => BFS
+Total nodes generated: 38838
+Total time taken >15 min
+Path length: Timed out.
+Path: Timed out.
+131394.txt: ALGORITHM USED => IDS
+Total nodes generated: 235565786
+Total time taken >15 min
+Path length: Timed out.
+Path: Timed out.
+131394.txt: ALGORITHM USED => A* h1
+Total nodes generated: 45084
+Total time taken: 0 minutes 24 seconds 554 milliseconds
+Path length: 24
+Path: DDRUURDLULDRURDLULDDRUUL
+131394.txt: ALGORITHM USED => A* h2
+Total nodes generated: 4388
+Total time taken: 0 minutes 0 seconds 281 milliseconds
+Path length: 24
+Path: DDRUURDLULDRURDLULDDRUUL
+131394.txt: ALGORITHM USED => A* h3
+Total nodes generated: 11534
+Total time taken: 0 minutes 1 seconds 884 milliseconds
+Path length: 24
+Path: DDRUURDLULDRURDLULDDRUUL
+
+
+131455.txt: ALGORITHM USED => BFS
+Total nodes generated: 139470
+Total time taken: 8 minutes 16 seconds 707 milliseconds
+Path length: 24
+Path: RRULULDDRRULDLURULDDRUUL
+131455.txt: ALGORITHM USED => IDS
+Total nodes generated: 235565786
+Total time taken >15 min
+Path length: Timed out.
+Path: Timed out.
+131455.txt: ALGORITHM USED => A* h1
+Total nodes generated: 43547
+Total time taken: 0 minutes 23 seconds 251 milliseconds
+Path length: 24
+Path: RRULULDDRRULDLURULDDRUUL
+131455.txt: ALGORITHM USED => A* h2
+Total nodes generated: 2924
+Total time taken: 0 minutes 0 seconds 131 milliseconds
+Path length: 24
+Path: RRULULDDRRULDLURULDDRUUL
+131455.txt: ALGORITHM USED => A* h3
+Total nodes generated: 9271
+Total time taken: 0 minutes 1 seconds 196 milliseconds
+Path length: 24
+Path: RRULULDDRRULDLURULDDRUUL
+
+
+131324.txt: ALGORITHM USED => BFS
+Total nodes generated: 128650
+Total time taken: 7 minutes 39 seconds 866 milliseconds
+Path length: 24
+Path: DRULDDRRULLDRRULULDDRUUL
+131324.txt: ALGORITHM USED => IDS
+Total nodes generated: 235565786
+Total time taken >15 min
+Path length: Timed out.
+Path: Timed out.
+131324.txt: ALGORITHM USED => A* h1
+Total nodes generated: 38600
+Total time taken: 0 minutes 18 seconds 203 milliseconds
+Path length: 24
+Path: DRULDDRRULLDRRULULDDRUUL
+131324.txt: ALGORITHM USED => A* h2
+Total nodes generated: 1497
+Total time taken: 0 minutes 0 seconds 38 milliseconds
+Path length: 24
+Path: DRULDDRRULLDRRULULDDRUUL
+131324.txt: ALGORITHM USED => A* h3
+Total nodes generated: 4554
+Total time taken: 0 minutes 0 seconds 303 milliseconds
+Path length: 24
+Path: DRULDDRRULLDRRULULDDRUUL
+
+
+131279.txt: ALGORITHM USED => BFS
+Total nodes generated: 123724
+Total time taken >15 min
+Path length: Timed out.
+Path: Timed out.
+131279.txt: ALGORITHM USED => IDS
+Total nodes generated: 235565786
+Total time taken >15 min
+Path length: Timed out.
+Path: Timed out.
+131279.txt: ALGORITHM USED => A* h1
+Total nodes generated: 40719
+Total time taken: 0 minutes 19 seconds 937 milliseconds
+Path length: 24
+Path: LURULLDRDRUULDRULLDDRUUL
+131279.txt: ALGORITHM USED => A* h2
+Total nodes generated: 3237
+Total time taken: 0 minutes 0 seconds 162 milliseconds
+Path length: 24
+Path: LURULLDRDRUULDRULLDDRUUL
+131279.txt: ALGORITHM USED => A* h3
+Total nodes generated: 7155
+Total time taken: 0 minutes 0 seconds 730 milliseconds
+Path length: 24
+Path: LURULLDRDRUULDRULLDDRUUL
+
+
+131286.txt: ALGORITHM USED => BFS
+Total nodes generated: 117667
+Total time taken: 7 minutes 7 seconds 594 milliseconds
+Path length: 24
+Path: DDLUULDDRULURDRULLDDRUUL
+131286.txt: ALGORITHM USED => IDS
+Total nodes generated: 235565786
+Total time taken >15 min
+Path length: Timed out.
+Path: Timed out.
+131286.txt: ALGORITHM USED => A* h1
+Total nodes generated: 41037
+Total time taken: 0 minutes 21 seconds 87 milliseconds
+Path length: 24
+Path: DDLUULDDRULURDRULLDDRUUL
+131286.txt: ALGORITHM USED => A* h2
+Total nodes generated: 1670
+Total time taken: 0 minutes 0 seconds 45 milliseconds
+Path length: 24
+Path: DDLUULDDRULURDRULLDDRUUL
+131286.txt: ALGORITHM USED => A* h3
+Total nodes generated: 7219
+Total time taken: 0 minutes 0 seconds 731 milliseconds
+Path length: 24
+Path: DDLUULDDRULURDRULLDDRUUL
+
+
+131256.txt: ALGORITHM USED => BFS
+Total nodes generated: 116444
+Total time taken: 6 minutes 58 seconds 514 milliseconds
+Path length: 24
+Path: UURDDRUULDLDRURULLDDRUUL
+131256.txt: ALGORITHM USED => IDS
+Total nodes generated: 235565786
+Total time taken >15 min
+Path length: Timed out.
+Path: Timed out.
+131256.txt: ALGORITHM USED => A* h1
+Total nodes generated: 40158
+Total time taken: 0 minutes 13 seconds 875 milliseconds
+Path length: 24
+Path: UURDDRUULDLDRURULLDDRUUL
+131256.txt: ALGORITHM USED => A* h2
+Total nodes generated: 1304
+Total time taken: 0 minutes 0 seconds 18 milliseconds
+Path length: 24
+Path: UURDDRUULDLDRURULLDDRUUL
+131256.txt: ALGORITHM USED => A* h3
+Total nodes generated: 5128
+Total time taken: 0 minutes 0 seconds 244 milliseconds
+Path length: 24
+Path: UURDDRUULDLDRURULLDDRUUL

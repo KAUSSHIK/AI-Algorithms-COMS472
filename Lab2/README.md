@@ -34,6 +34,10 @@ The two evaluation functions differ in their approach and prioritization. While 
 4. Follow the on-screen instructions to play against the AI agent.
 5. To adjust the search depth of the AI agent, modify the `depth` variable in the `main()` function.
 
+IF YOU WANT TO PLAY AGAINST THE AI, RUN THE `gomoku.py` SCRIPT.
+
+IF YOU WANT OT PLAY AI VS AI, comment out the some functions and replace them with the uncommented functions in the `gomoku.py` script.
+
 ## Dependencies
 
 - Python 3.x

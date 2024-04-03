@@ -15,9 +15,9 @@ infinity = float('inf')
 
 GameState = namedtuple('GameState', 'to_move, utility, board, moves') # Game state
 # to_move : player to move
-# utility :
-# board : current state of the board
-# moves : possible moves for the player to choose from
+# utility : function that returns the utility of the state for a player (1: win, -1: loss, 0: draw)
+# board   : current state of the board
+# moves   : possible moves for the player to choose from
 
 # Alpha Beta Pruning
 def alpha_beta_search(state, game, depth):
@@ -70,7 +70,7 @@ def query_player(game, state):
     game.display(state)
     print("")
     move = None
-    while move not in game.actions(state):
+    while move not in game.actions(state): # Check if the move is valid
         move_string = input('Your move? ')
         try:
             move = eval(move_string)
@@ -201,11 +201,10 @@ class TicTacToe(Game):
         return n >= self.k
     
 class Gomoku(TicTacToe):
-    """Gomoku game."""
+    """Gomoku game is like an extension of TicTacToe where 5 is the sequence length to win."""
     def __init__(self, h=15, v=15, k=5, depth=3):
         TicTacToe.__init__(self, h, v, k)
         self.depth = depth
-        self.utility_cache = {}  # Initialize the utility cache
         
     def actions(self, state):
         """Legal moves."""
@@ -226,42 +225,8 @@ class Gomoku(TicTacToe):
         # Use the existing compute_utility function or create a new evaluation function
         return self.compute_utility(state.board, list(state.board.keys())[-1], state.to_move)
     
-    # def compute_utility(self, board, move, player):
-    #     """Compute the utility of a board state."""
-    #     key = tuple(board.items())
-    #     if key not in self.utility_cache:
-    #         score = 0
-    #         other_player = 'X' if player == 'O' else 'O'
-
-    #         # Check for 5-in-a-row
-    #         if self.k_in_row(board, move, player, (0, 1)) or \
-    #         self.k_in_row(board, move, player, (1, 0)) or \
-    #         self.k_in_row(board, move, player, (1, 1)) or \
-    #         self.k_in_row(board, move, player, (1, -1)):
-    #             score = np.inf if player == 'X' else -np.inf
-    #         else:
-    #             # Count rows of 2, 3, and 4 stones
-    #             for dx, dy in [(0, 1), (1, 0), (1, 1), (1, -1)]:
-    #                 for length in [2, 3, 4]:
-    #                     open_rows = self.count_open_rows(board, move, player, length, (dx, dy))
-    #                     semi_open_rows = self.count_semiopen_rows(board, move, player, length, (dx, dy))
-    #                     score += (10 ** length) * open_rows + (10 ** (length - 1)) * semi_open_rows
-    #                     open_rows = self.count_open_rows(board, move, other_player, length, (dx, dy)) 
-    #                     semi_open_rows = self.count_semiopen_rows(board, move, other_player, length, (dx, dy))
-    #                     score -= (10 ** length) * open_rows + (10 ** (length - 1)) * semi_open_rows
-                        
-    #             # Add a bonus for occupying the center
-    #             center = (self.h // 2 + 1, self.v // 2 + 1)
-    #             if board.get(center) == player:
-    #                 score += 10
-    #             elif board.get(center) == other_player:
-    #                 score -= 10
-
-    #         self.utility_cache[key] = score
-
-    #     return self.utility_cache[key]
     
-
+    # Evaluation Function - 1 : Very good performance
     def compute_utility(self, board, move, player):
         """Compute the utility of a board state."""
         score = 0
@@ -293,6 +258,28 @@ class Gomoku(TicTacToe):
             
         return score
 
+    # Evaluation Function - 2 : Pretty Bad performance (mainly for comparison)
+    def compute_utility2(self, board, move, player):
+        """Compute the utility of a board state."""
+        score = 0
+        other_player = 'X' if player == 'O' else 'O'
+
+        # Check for 5-in-a-row
+        if self.k_in_row(board, move, player, (0, 1)) or \
+           self.k_in_row(board, move, player, (1, 0)) or \
+           self.k_in_row(board, move, player, (1, 1)) or \
+           self.k_in_row(board, move, player, (1, -1)):
+            return np.inf if player == 'X' else -np.inf
+        
+        # Count rows of 2, 3, and 4 stones
+        for dx, dy in [(0, 1), (1, 0), (1, 1), (1, -1)]:
+            for length in [2, 3, 4]:
+                open_rows = self.count_open_rows(board, move, player, length, (dx, dy))
+                score += (10 ** length) * open_rows
+                open_rows = self.count_open_rows(board, move, other_player, length, (dx, dy)) 
+                score -= (10 ** length) * open_rows
+                
+        return score
 
     def count_open_rows(self, board, move, player, length, direction):
         """Count the number of open rows of a given length in a given direction."""

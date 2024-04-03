@@ -19,7 +19,7 @@ GameState = namedtuple('GameState', 'to_move, utility, board, moves') # Game sta
 # board   : current state of the board
 # moves   : possible moves for the player to choose from
 
-# Alpha Beta Pruning
+#Alpha Beta Pruning
 def alpha_beta_search(state, game, depth):
     """Search game to determine best action; use alpha-beta pruning.
     This version cuts off search and uses an evaluation function."""
@@ -63,6 +63,50 @@ def alpha_beta_search(state, game, depth):
             best_action = a
     return best_action
 
+# # USE IF YOU WANT TO PLAY BETWEEN TWO AI AGENTS
+# def alpha_beta_search(state, game, depth):
+#     """Search game to determine best action; use alpha-beta pruning.
+#     This version cuts off search and uses an evaluation function."""
+
+#     player = game.to_move(state)
+
+#     def max_value(state, alpha, beta, depth):
+#         if game.terminal_test(state):
+#             return game.utility(state, player)
+#         if depth <= 0:
+#             return game.evaluate(state.board, list(state.board.keys())[-1], state.to_move)
+#         v = float('-inf')
+#         for a in game.actions(state):
+#             v = max(v, min_value(game.result(state, a), alpha, beta, depth - 1))
+#             if v >= beta:
+#                 return v
+#             alpha = max(alpha, v)
+#         return v
+
+#     def min_value(state, alpha, beta, depth):
+#         if game.terminal_test(state):
+#             return game.utility(state, player)
+#         if depth <= 0:
+#             return game.evaluate(state.board, list(state.board.keys())[-1], state.to_move)
+#         v = float('inf')
+#         for a in game.actions(state):
+#             v = min(v, max_value(game.result(state, a), alpha, beta, depth - 1))
+#             if v <= alpha:
+#                 return v
+#             beta = min(beta, v)
+#         return v
+
+#     # Body of alpha_beta_search:
+#     best_score = float('-inf')
+#     beta = float('inf')
+#     best_action = None
+#     for a in game.actions(state):
+#         v = min_value(game.result(state, a), best_score, beta, depth - 1)
+#         if v > best_score:
+#             best_score = v
+#             best_action = a
+#     return best_action
+
 # Players for the game
 def query_player(game, state):
     """Make a move by querying standard input."""
@@ -78,10 +122,22 @@ def query_player(game, state):
             move = None
     return move
 
-# Alpha Beta Player
+# Alpha Beta Player -> AI Agent for the game
 def alpha_beta_player(game, state):
     print("Alpha-beta player thinking...")
     return alpha_beta_search(state, game, game.depth) # This agent returns the best move from the alpha beta pruning serach
+
+#USE IF YOU WANT TO PLAY BETWEEN TWO AI AGENTS
+def alpha_beta_player1(game, state):
+    print("Alpha-beta player 1 thinking...")
+    game.evaluate = game.compute_utility  # Use the first evaluation function
+    return alpha_beta_search(state, game, game.depth)
+# USE IF YOU WANT TO PLAY BETWEEN TWO AI AGENTS
+def alpha_beta_player2(game, state):
+    print("Alpha-beta player 2 thinking...")
+    game.evaluate = game.compute_utility_2  # Use the second evaluation function
+    return alpha_beta_search(state, game, game.depth)
+
 
 class Game:
     """A game is similar to a problem, but it has a utility for each
@@ -223,7 +279,8 @@ class Gomoku(TicTacToe):
     
     def evaluate(self, state):
         # Use the existing compute_utility function or use compute_utility_2 for comparison
-        return self.compute_utility(state.board, list(state.board.keys())[-1], state.to_move)
+        return self.compute_utility_2(state.board, list(state.board.keys())[-1], state.to_move)
+        #pass  ->  if u want to play between two AI agents
     
     
     def compute_utility(self, board, move, player):
@@ -322,8 +379,12 @@ class Gomoku(TicTacToe):
         score = 0
         for dx, dy in [(0, 1), (1, 0), (1, 1), (1, -1)]:
             for length in [3, 4]:
-                score += self.count_open_rows(board, None, player, length, (dx, dy))
-                score -= self.count_open_rows(board, None, 'X' if player == 'O' else 'O', length, (dx, dy))
+                for x in range(1, self.h + 1):
+                    for y in range(1, self.v + 1):
+                        if board.get((x, y)) == player:
+                            score += self.count_open_rows(board, (x, y), player, length, (dx, dy))
+                        elif board.get((x, y)) == ('X' if player == 'O' else 'O'):
+                            score -= self.count_open_rows(board, (x, y), 'X' if player == 'O' else 'O', length, (dx, dy))
         return score
 
     # Evaluation Function - 2 : Pretty Bad performance (mainly for comparison)
@@ -446,6 +507,32 @@ class Gomoku(TicTacToe):
                 else:
                     print("Player {} wins!".format('X' if state.utility > 0 else 'O'))
                 return state.utility
+
+    # # PLAY GAME BETWEEN AI AGENTS
+    # def play_game(self, player1, player2):
+    #     """Play a game of Gomoku."""
+    #     state = self.initial
+    #     while True:
+    #         # Display the current state of the board
+    #         self.display(state)
+            
+    #         # Get the move from the current player
+    #         if state.to_move == 'X':
+    #             move = player1(self, state)
+    #         else:
+    #             move = player2(self, state)
+            
+    #         # Apply the move to the state
+    #         state = self.result(state, move)
+            
+    #         # Check if the game is over
+    #         if self.terminal_test(state):
+    #             self.display(state)
+    #             if state.utility == 0:
+    #                 print("It's a draw!")
+    #             else:
+    #                 print("Player {} wins!".format('X' if state.utility > 0 else 'O'))
+    #             return state.utility
         
     def terminal_test(self, state):
         """A state is terminal if it is won or there are no empty squares."""
@@ -485,3 +572,10 @@ if __name__ == '__main__':
     print("Playing a game against the AI with depth", depth)
     utility = play_gomoku(depth)
     print("Game result:", "X wins" if utility > 0 else "O wins" if utility < 0 else "Draw")
+
+    # # Play a game between two AI agents
+    # depth = 3  # Adjust depth here
+    # print("Playing a game between two AI agents with depth", depth)
+    # gomoku = Gomoku(depth=depth)
+    # utility = gomoku.play_game(alpha_beta_player1, alpha_beta_player2)
+    # print("Game result:", "X wins" if utility > 0 else "O wins" if utility < 0 else "Draw")

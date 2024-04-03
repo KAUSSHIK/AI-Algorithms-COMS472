@@ -222,64 +222,171 @@ class Gomoku(TicTacToe):
             return moves
     
     def evaluate(self, state):
-        # Use the existing compute_utility function or create a new evaluation function
+        # Use the existing compute_utility function or use compute_utility_2 for comparison
         return self.compute_utility(state.board, list(state.board.keys())[-1], state.to_move)
     
     
-    # Evaluation Function - 1 : Very good performance
     def compute_utility(self, board, move, player):
         """Compute the utility of a board state."""
         score = 0
         other_player = 'X' if player == 'O' else 'O'
 
-        # Check for 5-in-a-row
+        # Check for immediate wins
         if self.k_in_row(board, move, player, (0, 1)) or \
-           self.k_in_row(board, move, player, (1, 0)) or \
-           self.k_in_row(board, move, player, (1, 1)) or \
-           self.k_in_row(board, move, player, (1, -1)):
+        self.k_in_row(board, move, player, (1, 0)) or \
+        self.k_in_row(board, move, player, (1, 1)) or \
+        self.k_in_row(board, move, player, (1, -1)):
             return np.inf if player == 'X' else -np.inf
-        
+
         # Count rows of 2, 3, and 4 stones
         for dx, dy in [(0, 1), (1, 0), (1, 1), (1, -1)]:
             for length in [2, 3, 4]:
                 open_rows = self.count_open_rows(board, move, player, length, (dx, dy))
                 semi_open_rows = self.count_semiopen_rows(board, move, player, length, (dx, dy))
                 score += (10 ** length) * open_rows + (10 ** (length - 1)) * semi_open_rows
-                open_rows = self.count_open_rows(board, move, other_player, length, (dx, dy)) 
+                open_rows = self.count_open_rows(board, move, other_player, length, (dx, dy))
                 semi_open_rows = self.count_semiopen_rows(board, move, other_player, length, (dx, dy))
                 score -= (10 ** length) * open_rows + (10 ** (length - 1)) * semi_open_rows
-                
-        # Add a bonus for occupying the center
+
+        # Check for potential winning moves
+        potential_wins = self.count_potential_wins(board, move, player)
+        potential_losses = self.count_potential_wins(board, move, other_player)
+        score += 100 * potential_wins - 100 * potential_losses
+
+        # Analyze the board's overall structure
+        center_control = self.evaluate_center_control(board, player)
+        score += 50 * center_control
+
+        # Implement a dynamic scoring system based on game progress
+        progress = len(board) / (self.h * self.v)
+        if progress < 0.3:
+            score += 20 * self.evaluate_board_control(board, player)
+        else:
+            score += 20 * self.evaluate_immediate_threats(board, player)
+
+        return score
+
+    def count_potential_wins(self, board, move, player):
+        """Count the number of potential winning moves for a player."""
+        count = 0
+        for dx, dy in [(0, 1), (1, 0), (1, 1), (1, -1)]:
+            if self.has_potential_win(board, move, player, (dx, dy)):
+                count += 1
+        return count
+
+    def has_potential_win(self, board, move, player, direction):
+        """Check if a player has a potential winning move in a given direction."""
+        x, y = move
+        dx, dy = direction
+        count = 0
+        for i in range(1, self.k):
+            if board.get((x + i * dx, y + i * dy)) == player:
+                count += 1
+            elif board.get((x + i * dx, y + i * dy)) is not None:
+                break
+        if count == self.k - 1:
+            return True
+        count = 0
+        for i in range(1, self.k):
+            if board.get((x - i * dx, y - i * dy)) == player:
+                count += 1
+            elif board.get((x - i * dx, y - i * dy)) is not None:
+                break
+        if count == self.k - 1:
+            return True
+        return False
+
+    def evaluate_center_control(self, board, player):
+        """Evaluate the player's control of the center of the board."""
         center = (self.h // 2 + 1, self.v // 2 + 1)
         if board.get(center) == player:
-            score += 10
-        elif board.get(center) == other_player:
-            score -= 10
-            
+            return 1
+        elif board.get(center) is None:
+            return 0
+        else:
+            return -1
+
+    def evaluate_board_control(self, board, player):
+        """Evaluate the player's overall control of the board."""
+        score = 0
+        for x in range(1, self.h + 1):
+            for y in range(1, self.v + 1):
+                if board.get((x, y)) == player:
+                    score += 1
+                elif board.get((x, y)) is not None:
+                    score -= 1
+        return score / (self.h * self.v)
+
+    def evaluate_immediate_threats(self, board, player):
+        """Evaluate the player's immediate threats on the board."""
+        score = 0
+        for dx, dy in [(0, 1), (1, 0), (1, 1), (1, -1)]:
+            for length in [3, 4]:
+                score += self.count_open_rows(board, None, player, length, (dx, dy))
+                score -= self.count_open_rows(board, None, 'X' if player == 'O' else 'O', length, (dx, dy))
         return score
 
     # Evaluation Function - 2 : Pretty Bad performance (mainly for comparison)
-    def compute_utility2(self, board, move, player):
-        """Compute the utility of a board state."""
+    def compute_utility_2(self, board, move, player):
+        """Compute the utility of a board state with a focus on defensive play."""
         score = 0
         other_player = 'X' if player == 'O' else 'O'
 
-        # Check for 5-in-a-row
+        # Check for immediate wins
         if self.k_in_row(board, move, player, (0, 1)) or \
-           self.k_in_row(board, move, player, (1, 0)) or \
-           self.k_in_row(board, move, player, (1, 1)) or \
-           self.k_in_row(board, move, player, (1, -1)):
+        self.k_in_row(board, move, player, (1, 0)) or \
+        self.k_in_row(board, move, player, (1, 1)) or \
+        self.k_in_row(board, move, player, (1, -1)):
             return np.inf if player == 'X' else -np.inf
-        
-        # Count rows of 2, 3, and 4 stones
+
+        # Prioritize blocking opponent's potential wins
+        opponent_potential_wins = self.count_potential_wins(board, move, other_player)
+        score -= 100 * opponent_potential_wins
+
+        # Count rows of 2, 3, and 4 stones with a higher weight on defense
         for dx, dy in [(0, 1), (1, 0), (1, 1), (1, -1)]:
             for length in [2, 3, 4]:
                 open_rows = self.count_open_rows(board, move, player, length, (dx, dy))
-                score += (10 ** length) * open_rows
-                open_rows = self.count_open_rows(board, move, other_player, length, (dx, dy)) 
-                score -= (10 ** length) * open_rows
-                
+                semi_open_rows = self.count_semiopen_rows(board, move, player, length, (dx, dy))
+                score += (10 ** (length - 1)) * open_rows + (10 ** (length - 2)) * semi_open_rows
+                open_rows = self.count_open_rows(board, move, other_player, length, (dx, dy))
+                semi_open_rows = self.count_semiopen_rows(board, move, other_player, length, (dx, dy))
+                score -= 2 * (10 ** (length - 1)) * open_rows + 2 * (10 ** (length - 2)) * semi_open_rows
+
+        # Evaluate the board's overall defensive structure
+        defensive_score = self.evaluate_defensive_structure(board, player)
+        score += 50 * defensive_score
+
         return score
+
+    def evaluate_defensive_structure(self, board, player):
+        """Evaluate the player's overall defensive structure on the board."""
+        score = 0
+        other_player = 'X' if player == 'O' else 'O'
+
+        # Count the number of blocked opponent's stones
+        for x in range(1, self.h + 1):
+            for y in range(1, self.v + 1):
+                if board.get((x, y)) == other_player:
+                    if self.is_blocked(board, (x, y), other_player):
+                        score += 1
+
+        # Count the number of player's stones that are not blocked
+        for x in range(1, self.h + 1):
+            for y in range(1, self.v + 1):
+                if board.get((x, y)) == player:
+                    if not self.is_blocked(board, (x, y), player):
+                        score += 1
+
+        return score / (self.h * self.v)
+
+    def is_blocked(self, board, move, player):
+        """Check if a player's stone is blocked in all directions."""
+        x, y = move
+        for dx, dy in [(0, 1), (1, 0), (1, 1), (1, -1)]:
+            if board.get((x + dx, y + dy)) != player and board.get((x - dx, y - dy)) != player:
+                return False
+        return True
 
     def count_open_rows(self, board, move, player, length, direction):
         """Count the number of open rows of a given length in a given direction."""
@@ -374,7 +481,7 @@ def main():
 
 if __name__ == '__main__':
     # Play a game against the AI
-    depth = 2
+    depth = 1 #adjust depth here
     print("Playing a game against the AI with depth", depth)
     utility = play_gomoku(depth)
     print("Game result:", "X wins" if utility > 0 else "O wins" if utility < 0 else "Draw")
